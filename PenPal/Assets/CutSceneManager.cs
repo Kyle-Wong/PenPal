@@ -10,11 +10,16 @@ public class CutSceneManager : MonoBehaviour {
     public Text cutSceneTitle;
     public Text flavorText;
     public float timer;
+    public float duration;
     private GraphicColorLerp titleColorLerp;
     private GraphicColorLerp flavorColorLerp;
-
+    Queue<LetterEvent> cutSceneQueue;
+    LetterEvent curIndex;
+    
 	void Start () {
-        cutSceneTitle.text = "This is my text";
+        cutSceneQueue = GameManager.narrativeQueue;
+        curIndex = cutSceneQueue.Dequeue();
+        cutSceneTitle.text = "Chapter 1";
         flavorText.text = " ";
         //timer = 5;
         titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
@@ -24,22 +29,20 @@ public class CutSceneManager : MonoBehaviour {
         flavorColorLerp.initialDelay = 5;
         flavorColorLerp.duration = 5;
         flavorColorLerp.startColorChange();
+        duration = 5; 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
+       
+       
         timer += Time.deltaTime;
-        if (timer >= 5.0)
-        {
-            //cutSceneTitle.text = " ";
-            flavorText.text = "This is a story.";
-        }
-        if (timer >= 10.0)
-        {
-            //flavorText.text = " ";
-            
+        while (curIndex.type.text != "EOL")
+            if (timer >= duration)
+            {
+                //cutSceneTitle.text = " ";                  
+                flavorText.text = curIndex.text;
+            }
 
-        }
 	}
 }

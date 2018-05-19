@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a28c82b3adfc54dab9e8563b2a58f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charDelay: 0
 --- !u!114 &153442211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,8 +550,8 @@ MonoBehaviour:
   playOn: 2
   startColor: {r: 0.9121844, g: 0.9528302, b: 0.8944019, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 0}
-  duration: 5
-  initialDelay: 3
+  duration: 0
+  initialDelay: 0
 --- !u!1 &1175360284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,6 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733297366}
   - component: {fileID: 1733297365}
+  - component: {fileID: 1733297367}
   m_Layer: 0
   m_Name: CutSceneManager
   m_TagString: Untagged
@@ -1087,6 +1089,7 @@ MonoBehaviour:
   cutSceneTitle: {fileID: 2038132508}
   flavorText: {fileID: 1132829581}
   timer: 0
+  duration: 0
 --- !u!4 &1733297366
 Transform:
   m_ObjectHideFlags: 0
@@ -1100,6 +1103,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1733297367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733297364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55657f0dde7e9ef4b9920befc3fa23c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783596889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1339,7 @@ MonoBehaviour:
   playOn: 2
   startColor: {r: 1, g: 1, b: 1, a: 1}
   endColor: {r: 1, g: 1, b: 1, a: 0}
-  duration: 5
+  duration: 0
   initialDelay: 0
 --- !u!1 &2040029205
 GameObject:
