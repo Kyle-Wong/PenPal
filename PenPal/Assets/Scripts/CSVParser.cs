@@ -41,6 +41,7 @@ public class CSVParser : MonoBehaviour {
 			e.group = Convert.ToInt32(entry[1]);
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
+			GameManager.palQueue.Enqueue(e);
 		} else {
 			Debug.Log("Error: cannot resolve speaker for entry " + i.ToString());
 		}
