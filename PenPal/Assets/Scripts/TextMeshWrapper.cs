@@ -51,4 +51,12 @@ public class TextMeshWrapper : MonoBehaviour {
         textMesh.text = "";
         return result;
     }
+    public void addAndWrapText(string s)
+    {
+        textMesh.text = getWrappedString(textMesh.text + s);
+    }
+    public string addText(string s)
+    {
+        return getWrappedString(textMesh.text + s);
+    }
 }

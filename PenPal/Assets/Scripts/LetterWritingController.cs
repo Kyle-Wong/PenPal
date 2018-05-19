@@ -44,7 +44,6 @@ public class LetterWritingController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Debug.Log(bodyRevealer.charIndex);
         switch (currentLE.type)
         {
             case (LetterEvent.Type.INTRO):
@@ -164,6 +163,8 @@ public class LetterWritingController : MonoBehaviour {
             waitingForInput = false;
             bodyRevealer.setPlaying(true);
             bodyRevealer.addText(" " + chosenLE.text);
+            GameManager.playerPositiveScore += chosenLE.positive;
+            GameManager.playerNegativeScore += chosenLE.negative;
         }
 
     }

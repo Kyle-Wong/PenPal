@@ -50,7 +50,7 @@ public class SequentialText : MonoBehaviour {
                     isPlaying = false;
                     return;
                 }
-                textMesh.text = allText.Substring(0, charIndex);
+                textMesh.text = allText.Substring(0, charIndex+1);
                 charIndex++;
             }
         }
