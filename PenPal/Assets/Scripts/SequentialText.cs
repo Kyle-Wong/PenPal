@@ -10,15 +10,15 @@ public class SequentialText : MonoBehaviour {
     [HideInInspector]
     public string allText = "";
     private float charTimer = 0;
-    private int charIndex = 0;
+    [HideInInspector]
+    public int charIndex = 0;
     private bool isPlaying = false;
     private void Awake()
     {
-        
+        textMesh = GetComponent<TextMesh>();
+        allText = "";
     }
     void Start () {
-        isPlaying = true;
-        textMesh = GetComponent<TextMesh>();
 	}
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class SequentialText : MonoBehaviour {
                 while (allText[charIndex] == '\n' || allText[charIndex] == ' ')
                 {
                     
-                    textMesh.text += allText[charIndex];
+                    //textMesh.text += allText[charIndex];
                     charIndex++;
                     if (charIndex >= allText.Length)
                     {
@@ -50,14 +50,13 @@ public class SequentialText : MonoBehaviour {
                     isPlaying = false;
                     return;
                 }
-                textMesh.text += allText[charIndex];
+                textMesh.text = allText.Substring(0, charIndex);
                 charIndex++;
             }
         }
 	}
     public void begin()
     {
-        charTimer = 0;
         isPlaying = true;
     }
     public void end()
@@ -66,6 +65,8 @@ public class SequentialText : MonoBehaviour {
     }
     public void resetText()
     {
+        charIndex = 0;
+        charTimer = 0;
         textMesh.text = "";
         isPlaying = false;
     }
@@ -73,13 +74,28 @@ public class SequentialText : MonoBehaviour {
     {
         return isPlaying;
     }
+    public void setPlaying(bool x)
+    {
+        isPlaying = x;
+    }
     public void setText(string s)
     {
+        charTimer = 0;
         charIndex = 0;
-        allText = textMesh.GetComponent<TextMeshWrapper>().getWrappedString(s);
+        TextMeshWrapper wrapper = GetComponent<TextMeshWrapper>();
+        if (wrapper != null)
+            allText = GetComponent<TextMeshWrapper>().getWrappedString(s);
+        else
+            allText = s;
     }
     public void addText(string s)
     {
-        allText = textMesh.GetComponent<TextMeshWrapper>().getWrappedString(allText + s);
+        TextMeshWrapper wrapper = GetComponent<TextMeshWrapper>();
+        if (wrapper != null)
+        {
+            allText = GetComponent<TextMeshWrapper>().getWrappedString(allText + s);
+        }
+        else
+            allText = allText + s;
     }
 }

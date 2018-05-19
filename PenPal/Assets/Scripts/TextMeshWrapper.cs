@@ -15,7 +15,7 @@ public class TextMeshWrapper : MonoBehaviour {
         textMesh = GetComponent<TextMesh>();
     }
     void Start () {
-        
+        textMesh.text = getWrappedString(textMesh.text);
 	}
 	
 	// Update is called once per frame
