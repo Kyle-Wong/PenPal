@@ -19,10 +19,7 @@ public class CSVParser : MonoBehaviour {
 			CreateLetterEvent(entry, i);
 		}
 		//maybe run a unit test on sizes of queue vs. sizes expected lol
-		Debug.Log("Loaded all queues...");
-		while (GameManager.playerQueue.Count != 0) {
-			LetterEvent e = GameManager.playerQueue.Dequeue();
-		}
+		Debug.Log("Loaded all queues.");
 	}
 	
 	private void CreateLetterEvent(string[] entry, int i) {
