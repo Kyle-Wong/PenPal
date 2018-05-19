@@ -7,7 +7,7 @@ using System.IO;
 using System;
 public class CSVParser : MonoBehaviour {
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		ReadCSV();		
 	}
 	private void ReadCSV() {
@@ -29,18 +29,21 @@ public class CSVParser : MonoBehaviour {
 			e.group = Convert.ToInt32(entry[1]);
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
+			e.prompt = entry[4];
 			GameManager.playerQueue.Enqueue(e);
 		} else if (entry[0].Equals("narrative")) {
 			e.speaker = LetterEvent.Speaker.NARRATIVE;
 			e.group = Convert.ToInt32(entry[1]);
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
+			e.prompt = entry[4];
 			GameManager.narrativeQueue.Enqueue(e);
 		} else if (entry[0].Equals("pal")) {
 			e.speaker = LetterEvent.Speaker.PAL;
 			e.group = Convert.ToInt32(entry[1]);
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
+			e.prompt = entry[4];
 			GameManager.palQueue.Enqueue(e);
 		} else {
 			Debug.Log("Error: cannot resolve speaker for entry " + i.ToString());
