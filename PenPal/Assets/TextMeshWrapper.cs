@@ -13,6 +13,7 @@ public class TextMeshWrapper : MonoBehaviour {
     {
         textMesh = GetComponent<TextMesh>();
         textInOneLine = removeNewLines(textMesh.text);
+
         words = textInOneLine.Split(' ');
     }
     void Start () {
