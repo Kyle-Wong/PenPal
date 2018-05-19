@@ -25,35 +25,48 @@ public class CSVParser : MonoBehaviour {
 	
 	private void CreateLetterEvent(string[] entry, int i) {
 		LetterEvent e = new LetterEvent();
-		if (entry[0].Equals("player")) {
+		e.eventID = Convert.ToInt32(entry[0]);
+		if (entry[1].Equals("player")) {
 			e.speaker = LetterEvent.Speaker.PLAYER;
-			e.group = Convert.ToInt32(entry[1]);
-			e.type = ResolveLetterType(entry[2], i);
-			e.text = entry[3];
-			e.prompt = entry[4];
-			e.positive = Convert.ToInt32(entry[5]);
-			e.negative = Convert.ToInt32(entry[6]);
+			e.group = Convert.ToInt32(entry[2]);
+			e.type = ResolveLetterType(entry[3], i);
+			e.text = entry[4];
+			e.prompt = entry[5];
+			if (!entry[6].Equals(""))
+				e.positive = Convert.ToInt32(entry[6]);
+			if (!entry[7].Equals(""))
+				e.negative = Convert.ToInt32(entry[7]);
+			if (!entry[8].Equals(""))
+				e.relatedToID = Convert.ToInt32(entry[8]);
 			GameManager.playerQueue.Enqueue(e);
-		} else if (entry[0].Equals("narrative")) {
+		} else if (entry[1].Equals("narrative")) {
 			e.speaker = LetterEvent.Speaker.NARRATIVE;
-			e.group = Convert.ToInt32(entry[1]);
-			e.type = ResolveLetterType(entry[2], i);
-			e.text = entry[3];
-			e.prompt = entry[4];
-			e.positive = Convert.ToInt32(entry[5]);
-			e.negative = Convert.ToInt32(entry[6]);
+			e.group = Convert.ToInt32(entry[2]);
+			e.type = ResolveLetterType(entry[3], i);
+			e.text = entry[4];
+			e.prompt = entry[5];
+			if (!entry[6].Equals(""))
+				e.positive = Convert.ToInt32(entry[7]);
+			if (!entry[7].Equals(""))
+				e.negative = Convert.ToInt32(entry[7]);
+			if (!entry[8].Equals(""))
+				e.relatedToID = Convert.ToInt32(entry[8]);
 			GameManager.narrativeQueue.Enqueue(e);
-		} else if (entry[0].Equals("pal")) {
+		} else if (entry[1].Equals("pal")) {
 			e.speaker = LetterEvent.Speaker.PAL;
-			e.group = Convert.ToInt32(entry[1]);
-			e.type = ResolveLetterType(entry[2], i);
-			e.text = entry[3];
-			e.prompt = entry[4];
-			e.positive = Convert.ToInt32(entry[5]);
-			e.negative = Convert.ToInt32(entry[6]);
+			e.group = Convert.ToInt32(entry[2]);
+			e.type = ResolveLetterType(entry[3], i);
+			e.text = entry[4];
+			e.prompt = entry[5];
+			if (!entry[6].Equals(""))
+				e.positive = Convert.ToInt32(entry[6]);
+			if (!entry[7].Equals(""))
+				e.negative = Convert.ToInt32(entry[7]);
+			if (!entry[8].Equals(""))
+				e.relatedToID = Convert.ToInt32(entry[8]);
 			GameManager.palQueue.Enqueue(e);
 		} else {
-			Debug.Log("Error: cannot resolve speaker for entry " + i.ToString());
+			Debug.Log("Error: cannot resolve speaker for entry " + entry[1] + i.ToString());
 		}
 	}
 	private LetterEvent.Type ResolveLetterType(string type, int i) {

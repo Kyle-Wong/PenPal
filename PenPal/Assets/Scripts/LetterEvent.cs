@@ -19,8 +19,11 @@ public class LetterEvent {
 		ERROR
 	}
 
+	//EventID for this event.
+	public int eventID;
 	//Speaker of the message, mostly for queue bookkeeping. See above enum.
 	public Speaker speaker;
+	//Group of the message. Messages in the same group are part of the same scenario.
 	public int group;
 	//Type of the message. Use these to know what to do in code. See above enum.
 	public Type type;
@@ -32,4 +35,7 @@ public class LetterEvent {
 	public int positive = 0;
 	//For the player, how many "negative points" this choice will add to your negative score.
 	public int negative = 0;
+	//Sometimes, the pal's response will have a "related to ID" to indiciate to only write
+	//with this choice if the player chose to respond with the event ID indicated. So lifelike!
+	public int relatedToID = -1;
 }

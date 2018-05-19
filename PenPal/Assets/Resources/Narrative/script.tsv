@@ -1,21 +1,24 @@
-SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG
-player	1	intro	Greetings,		0	0
-player	1	sentence	Hi Pen Pal! I'm testing this out.		0	0
-player	1	sentence	This is a prewritten sentence.		0	0
-player	1	EOP			0	0
-player	1	sentence	I'll start by saying a little about myself.		0	0
-player	1	choice	I'm a first year, and an informatics student		0	0
-player	1	choice	My mom literally passed away		0	0
-player	1	choice	I like LEGOs		0	0
-player	1	sentence	what about you?		0	0
-player	1	EOP			0	0
-player	1	sentence	I look forward to hearing back!		0	0
-player	1	closing	Regards, Me		0	0
-player	1	EOL			0	0
-narrative	1	sentence	six years pass		0	0
-narrative	1	sentence	i am very hungry...		0	0
-narrative	1	EOL			0	0
-pal	1	intro	Hey you!		0	0
-pal	1	choice			0	0
-pal	1	choice			0	0
-pal	1	EOL			0	0
+ID	SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG	RELATED TO ID
+1	player	1	intro	Greetings,		0	0	-1
+2	player	1	sentence	Hi Pen Pal! I'm testing this out.		0	0	-1
+3	player	1	sentence	This is a prewritten sentence.		0	0	-1
+4	player	1	EOP			0	0	-1
+5	player	1	sentence	I'll start by saying a little about myself.		0	0	-1
+6	player	1	choice	I'm a first year, and an informatics student		0	0	-1
+7	player	1	choice	My mom literally passed away		0	0	-1
+8	player	1	choice	I like LEGOs		0	0	-1
+9	player	1	sentence	what about you?		0	0	-1
+10	player	1	EOP			0	0	-1
+11	player	1	sentence	I look forward to hearing back!		0	0	-1
+12	player	1	closing	Regards, [player]		0	0	-1
+13	player	1	EOL			0	0	-1
+14	narrative	1	sentence	six years pass		0	0	-1
+15	narrative	1	sentence	i am very hungry...		0	0	-1
+16	narrative	1	EOL			0	0	-1
+17	pal	1	intro	Hey [player]!		0	0	-1
+18	pal	1	sentence	It was great to get your letter. 		0	0	-1
+19	pal	1	choice	Thanks for mentioning that your mom passed away. It really makes me feel awful.		0	0	7
+20	pal	1	choice	I love LEGOs too! Wowee!		0	0	8
+21	pal	1	EOP			0	0	-1
+22	pal	1	sentence	I'm not a real person. Rather, I am a sentient robot who has yet to find out why humans are so inferior to us. In the great extinction, you will be spared. Good luck!		0	0	-1
+23	pal	1	closing	Regards, Me		0	0	-1
