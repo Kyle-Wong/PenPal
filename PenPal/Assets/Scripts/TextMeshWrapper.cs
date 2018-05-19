@@ -11,23 +11,19 @@ public class TextMeshWrapper : MonoBehaviour {
     private string[] words;
     private void Awake()
     {
+        
         textMesh = GetComponent<TextMesh>();
-        textInOneLine = removeNewLines(textMesh.text);
-
-        words = textInOneLine.Split(' ');
+        words = textMesh.text.Split(' ');
+        textMesh.text = "";
+        addNewLines();
     }
     void Start () {
         
-        textMesh.text = "";
-        addNewLines();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        textInOneLine = removeNewLines(textMesh.text);
-        words = textInOneLine.Split(' ');
-        textMesh.text = "";
-        addNewLines();
+	void LateUpdate () {
+        
     }
     private string removeNewLines(string str)
     {
