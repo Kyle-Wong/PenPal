@@ -11,11 +11,12 @@ public class CSVParser : MonoBehaviour {
 		ReadCSV();		
 	}
 	private void ReadCSV() {
-		StreamReader file = new System.IO.StreamReader("Assets/Resources/Narrative/script.csv");	
+		StreamReader file = new System.IO.StreamReader("Assets/Resources/Narrative/script.tsv");	
 		string buf;
 		file.ReadLine(); //eat the header 
-		for (int i = 0; (buf= file.ReadLine()) != null; ++i) {
-			string[] entry = buf.Trim().Split(',');
+		for (int i = 2; (buf= file.ReadLine()) != null; ++i) {
+			string[] entry = buf.Trim().Split('\t');
+			Debug.Log("Loading queues at tsv line " + i.ToString());
 			CreateLetterEvent(entry, i);
 		}
 		//maybe run a unit test on sizes of queue vs. sizes expected lol

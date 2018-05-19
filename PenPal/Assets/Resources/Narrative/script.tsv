@@ -1,0 +1,21 @@
+SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG
+player	1	intro	Greetings,		0	0
+player	1	sentence	Hi Pen Pal! I'm testing this out.		0	0
+player	1	sentence	This is a prewritten sentence.		0	0
+player	1	EOP			0	0
+player	1	sentence	I'll start by saying a little about myself.		0	0
+player	1	choice	I'm a first year, and an informatics student		0	0
+player	1	choice	My mom literally passed away		0	0
+player	1	choice	I like LEGOs		0	0
+player	1	sentence	what about you?		0	0
+player	1	EOP			0	0
+player	1	sentence	I look forward to hearing back!		0	0
+player	1	closing	Regards, Me		0	0
+player	1	EOL			0	0
+narrative	1	sentence	six years pass		0	0
+narrative	1	sentence	i am very hungry...		0	0
+narrative	1	EOL			0	0
+pal	1	intro	Hey you!		0	0
+pal	1	choice			0	0
+pal	1	choice			0	0
+pal	1	EOL			0	0
