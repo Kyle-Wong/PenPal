@@ -1,0 +1,13 @@
+SPEAKER,GROUP,TYPE,TEXT
+player,1,intro,"Greetings,"
+player,1,sentence,Hi Pen Pal! I'm testing this out.
+player,1,sentence,This is a prewritten sentence.
+player,1,EOP,
+player,1,sentence,I'll start by saying a little about myself.
+player,1,choice,"I'm a first year, and an informatics student"
+player,1,choice,My mom literally passed away
+player,1,choice,I like LEGOs
+player,1,sentence,what about you?
+player,1,EOP,
+player,1,sentence,I look forward to hearing back!
+player,1,EOL,
