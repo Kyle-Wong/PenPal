@@ -28,5 +28,8 @@ public class LetterEvent {
 	public string text;
 	//Abbrevited prompt for CHOICE types
 	public string prompt;
-
+	//For the player, how many "positive points" this choice will add to your positive score.
+	public int positive = 0;
+	//For the player, how many "negative points" this choice will add to your negative score.
+	public int negative = 0;
 }

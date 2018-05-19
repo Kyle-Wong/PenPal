@@ -30,6 +30,8 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
 			e.prompt = entry[4];
+			e.positive = Convert.ToInt32(entry[5]);
+			e.negative = Convert.ToInt32(entry[6]);
 			GameManager.playerQueue.Enqueue(e);
 		} else if (entry[0].Equals("narrative")) {
 			e.speaker = LetterEvent.Speaker.NARRATIVE;
@@ -37,6 +39,8 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
 			e.prompt = entry[4];
+			e.positive = Convert.ToInt32(entry[5]);
+			e.negative = Convert.ToInt32(entry[6]);
 			GameManager.narrativeQueue.Enqueue(e);
 		} else if (entry[0].Equals("pal")) {
 			e.speaker = LetterEvent.Speaker.PAL;
@@ -44,6 +48,8 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[2], i);
 			e.text = entry[3];
 			e.prompt = entry[4];
+			e.positive = Convert.ToInt32(entry[5]);
+			e.negative = Convert.ToInt32(entry[6]);
 			GameManager.palQueue.Enqueue(e);
 		} else {
 			Debug.Log("Error: cannot resolve speaker for entry " + i.ToString());
