@@ -13,9 +13,6 @@ public class TextMeshWrapper : MonoBehaviour {
     {
         
         textMesh = GetComponent<TextMesh>();
-        words = textMesh.text.Split(' ');
-        textMesh.text = "";
-        addNewLines();
     }
     void Start () {
         
@@ -43,5 +40,15 @@ public class TextMeshWrapper : MonoBehaviour {
                 textMesh.text = textMesh.text.Substring(0, len) + '\n' + words[i];
             }
         }
+
+    }
+    public string getWrappedString(string s)
+    {
+        words = s.Split(' ');
+        textMesh.text = "";
+        addNewLines();
+        string result = textMesh.text;
+        textMesh.text = "";
+        return result;
     }
 }

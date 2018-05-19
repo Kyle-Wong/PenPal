@@ -7,7 +7,8 @@ public class SequentialText : MonoBehaviour {
     // Use this for initialization
     public float charDelay;
     private TextMesh textMesh;
-    private string allText;
+    [HideInInspector]
+    public string allText = "";
     private float charTimer = 0;
     private int charIndex = 0;
     private bool isPlaying = false;
@@ -18,8 +19,6 @@ public class SequentialText : MonoBehaviour {
     void Start () {
         isPlaying = true;
         textMesh = GetComponent<TextMesh>();
-        allText = textMesh.text;
-        textMesh.text = "";
 	}
 	
 	// Update is called once per frame
@@ -30,14 +29,26 @@ public class SequentialText : MonoBehaviour {
             if (charTimer > charDelay)
             {
                 if (charIndex >= allText.Length)
+                {
+                    isPlaying = false;
                     return;
+                }
                 charTimer = 0;
                 while (allText[charIndex] == '\n' || allText[charIndex] == ' ')
                 {
-                    if (charIndex >= allText.Length)
-                        break;
+                    
                     textMesh.text += allText[charIndex];
                     charIndex++;
+                    if (charIndex >= allText.Length)
+                    {
+                        isPlaying = false;
+                        break;
+                    }
+                }
+                if (charIndex >= allText.Length)
+                {
+                    isPlaying = false;
+                    return;
                 }
                 textMesh.text += allText[charIndex];
                 charIndex++;
@@ -61,5 +72,14 @@ public class SequentialText : MonoBehaviour {
     public bool playing()
     {
         return isPlaying;
+    }
+    public void setText(string s)
+    {
+        charIndex = 0;
+        allText = textMesh.GetComponent<TextMeshWrapper>().getWrappedString(s);
+    }
+    public void addText(string s)
+    {
+        allText = textMesh.GetComponent<TextMeshWrapper>().getWrappedString(allText + s);
     }
 }
