@@ -25,14 +25,14 @@ ID	SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG	RELATED TO ID	GOTO
 24	pal	1	greeting	To [player],		0	0	-1	none
 25	pal	1	sentence	This is me writing back to you as you requested in your letter.		0	0	-1	none
 26	pal	1	sentence	I think that homework assignments are a thing to be taken seriously no matter how mean your teacher is.		0	0	-1	none
-27	pal	1	choice	I’m actually pretty amazing at math. English isn’t my strong suit however.		0	0	8	none
-28	pal	1	choice	It’s completely understandable. Not everyone can be good at math. 		0	0	9	none
-29	pal	1	choice	That’s rude to say to a stranger that you’d rather not be writing to them. 		0	0	-1	none
+27	pal	1	choice	I’m actually pretty amazing at math. English isn’t my strong suit however.		0	0	9	none
+28	pal	1	choice	It’s completely understandable. Not everyone can be good at math. 		0	0	10	none
+29	pal	1	choice	That’s rude to say to a stranger that you’d rather not be writing to them. 		0	0	11	none
 30	pal	1	EOP			0	0	-1	none
 31	pal	1	sentence	Other than that, I have nothing else to talk about.		0	0	-1	none
-32	pal	1	choice	It’s very nice to meet you too. I would like to be friends as well. 		0	0	-1	none
-33	pal	1	choice	You’ve gotten a response back to your letter as you wanted. So what now? 		0	0	-1	none
-34	pal	1	choice	If you don’t care, then why are you even writing? 		0	0	-1	none
+32	pal	1	choice	It’s very nice to meet you too. I would like to be friends as well. 		0	0	14	none
+33	pal	1	choice	You’ve gotten a response back to your letter as you wanted. So what now? 		0	0	15	none
+34	pal	1	choice	If you don’t care, then why are you even writing? 		0	0	16	none
 35	pal	1	closing	From, [Pen pal]		0	0	-1	none
 36	pal	1	EOL			0	0	-1	narrative
 37	narrative	1	sentence	My pen pal seemed … interesting.		0	0	-1	none

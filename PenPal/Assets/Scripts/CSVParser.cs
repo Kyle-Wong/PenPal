@@ -49,11 +49,11 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[3], i);
 			e.text = entry[4];
 			e.prompt = entry[5];
-			if (!entry[6].Equals(""))
+			if (!entry[6].Equals("0"))
 				e.positive = Convert.ToInt32(entry[6]);
-			if (!entry[7].Equals(""))
+			if (!entry[7].Equals("0"))
 				e.negative = Convert.ToInt32(entry[7]);
-			if (!entry[8].Equals(""))
+			if (!entry[8].Equals("-1"))
 				e.relatedToID = Convert.ToInt32(entry[8]);
 			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.playerQueue.Enqueue(e);
@@ -63,11 +63,11 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[3], i);
 			e.text = entry[4];
 			e.prompt = entry[5];
-			if (!entry[6].Equals(""))
+			if (!entry[6].Equals("0"))
 				e.positive = Convert.ToInt32(entry[7]);
-			if (!entry[7].Equals(""))
+			if (!entry[7].Equals("0"))
 				e.negative = Convert.ToInt32(entry[7]);
-			if (!entry[8].Equals(""))
+			if (!entry[8].Equals("-1"))
 				e.relatedToID = Convert.ToInt32(entry[8]);
 			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.narrativeQueue.Enqueue(e);
@@ -77,12 +77,13 @@ public class CSVParser : MonoBehaviour {
 			e.type = ResolveLetterType(entry[3], i);
 			e.text = entry[4];
 			e.prompt = entry[5];
-			if (!entry[6].Equals(""))
+			if (!entry[6].Equals("0"))
 				e.positive = Convert.ToInt32(entry[6]);
-			if (!entry[7].Equals(""))
+			if (!entry[7].Equals("0"))
 				e.negative = Convert.ToInt32(entry[7]);
-			if (!entry[8].Equals(""))
+			if (!entry[8].Equals("-1")) {
 				e.relatedToID = Convert.ToInt32(entry[8]);
+			}
 			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.palQueue.Enqueue(e);
 		} else {

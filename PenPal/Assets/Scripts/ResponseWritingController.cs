@@ -13,7 +13,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     public GraphicColorLerp fadeToTransparent;
 
     void Start () {
-		Debug.Log(GameManager.playerChoiceHistory);
+		//Debug.Log(GameManager.playerChoiceHistory.ToString());
         letterQueue = GameManager.palQueue;
         currentLE = letterQueue.Dequeue();
 		textWrapper.addAndWrapText(buildLetter());
@@ -25,23 +25,13 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 	}
     public string buildHeader()
     {
-        string result = "";
-        while(letterQueue.Count > 0 && currentLE.type == LetterEvent.Type.INTRO)
-        {
-            result += currentLE.text;
-			result = result.Replace("[player]", GameManager.playerName);
-            currentLE = letterQueue.Dequeue();
-        }
-        return result;
+        return currentLE.text.Replace("[player]", GameManager.playerName);
     }
     public string buildClosing()
     {
+		//Todo: parse out penpal name and replace
         string result = "";
-        while(letterQueue.Count > 0 && currentLE.type == LetterEvent.Type.CLOSING)
-        {
-            result += currentLE.text;
-            currentLE = letterQueue.Dequeue();
-        }
+        result += currentLE.text;
         return result;
     }
     public string buildLetter()
@@ -49,7 +39,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
         string result = "";
         if (letterQueue.Count == 0)
             return "";
-        while(letterQueue.Count > 0)
+        while(currentLE.type != LetterEvent.Type.EOL)
         {
             switch (currentLE.type)
             {
@@ -79,16 +69,16 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     }
     private string resolveChoice()
     {
-        List<LetterEvent> result = new List<LetterEvent>();
-        if (currentLE.type != LetterEvent.Type.CHOICE)
-            return null;
-        while(currentLE.type == LetterEvent.Type.CHOICE)
+        List<LetterEvent> result = new List<LetterEvent>(){currentLE};
+        while(letterQueue.Peek().type == LetterEvent.Type.CHOICE)
         {
-            result.Add(currentLE);
             currentLE = letterQueue.Dequeue();
+			result.Add(currentLE);
+			Debug.Log("Result list item: "+ currentLE.eventID);
         }
 		foreach(LetterEvent e in result) {
 			foreach (int j in GameManager.playerChoiceHistory) {
+				Debug.Log(e.relatedToID.ToString() + "vs. j:" + j.ToString());
 				if (e.relatedToID == j) {
 					return e.text;
 				}
