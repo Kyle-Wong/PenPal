@@ -31,7 +31,10 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     private bool waitingForInput;
     public string cutScene;
     public GameObject sendButton;
-
+    public GraphicColorLerp fadeToBlack;
+    public GraphicColorLerp fadeToTransparent;
+    public float initialDelayDuration;
+    private float initialDelayTimer = 0;
     private void Awake()
     {
         headerRevealer.charDelay = charDelay;
@@ -40,7 +43,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
         
     }
     void Start () {
-        letterQueue = GameManager.playerQueue;
+        letterQueue = new Queue<LetterEvent>(GameManager.playerQueue);
         currentLE = letterQueue.Dequeue();
         wrappers = new TextMeshWrapper[buttonList.Length];
         for(int i = 0; i < buttonList.Length; i++)
@@ -52,49 +55,57 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
 
     // Update is called once per frame
     void Update () {
-        if (state == State.LetterWriting)
+        if (initialDelayTimer < initialDelayDuration)
         {
-            switch (currentLE.type)
+            initialDelayTimer += Time.deltaTime;
+        }
+        else
+        {
+            if (state == State.LetterWriting)
             {
-                case (LetterEvent.Type.INTRO):
-                    headerRevealer.begin();
-                    headerRevealer.setText(buildHeader());
-                    break;
-                case (LetterEvent.Type.SENTENCE):
-                    if (headerRevealer.playing() || waitingForInput)
+                switch (currentLE.type)
+                {
+                    case (LetterEvent.Type.INTRO):
+                        headerRevealer.begin();
+                        headerRevealer.setText(buildHeader());
                         break;
-                    bodyRevealer.begin();
-                    string paragraph = buildParagraph();
-                    bodyRevealer.addText(paragraph);
-                    break;
-                case (LetterEvent.Type.CLOSING):
-                    if (bodyRevealer.playing() || waitingForInput)
+                    case (LetterEvent.Type.SENTENCE):
+                        if (headerRevealer.playing() || waitingForInput)
+                            break;
+                        bodyRevealer.begin();
+                        string paragraph = buildParagraph();
+                        bodyRevealer.addText(paragraph);
                         break;
-                    closingRevealer.begin();
-                    closingRevealer.setText(buildClosing());
-                    break;
-                case (LetterEvent.Type.CHOICE):
-                    if (bodyRevealer.playing())
+                    case (LetterEvent.Type.CLOSING):
+                        if (bodyRevealer.playing() || waitingForInput)
+                            break;
+                        closingRevealer.begin();
+                        closingRevealer.setText(buildClosing());
                         break;
-                    if (choices == null)
-                    {
-                        choices = getChoices();
-                    }
-                    break;
-                case LetterEvent.Type.EOP:
-                    headerRevealer.allText += '\n';
-                    currentLE = letterQueue.Dequeue();
-                    break;
-                case LetterEvent.Type.EOL:
-                    state = State.LetterDone;
-                    break;
-                case LetterEvent.Type.ERROR:
-                    Debug.Log("ERROR");
-                    break;
+                    case (LetterEvent.Type.CHOICE):
+                        if (bodyRevealer.playing())
+                            break;
+                        if (choices == null)
+                        {
+                            choices = getChoices();
+                        }
+                        break;
+                    case LetterEvent.Type.EOP:
+                        headerRevealer.allText += '\n';
+                        currentLE = letterQueue.Dequeue();
+                        break;
+                    case LetterEvent.Type.EOL:
+                        state = State.LetterDone;
+                        break;
+                    case LetterEvent.Type.ERROR:
+                        Debug.Log("ERROR");
+                        break;
+                }
             }
-        } else if(state == State.LetterDone)
-        {
-            sendButton.SetActive(true);
+            else if (state == State.LetterDone)
+            {
+                sendButton.SetActive(true);
+            }
         }
 	}
     public string buildHeader()
@@ -183,6 +194,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             {
                 buttonList[i].text = "";
             }
+            choices = null;
             GameManager.playerPositiveScore += chosenLE.positive;
             GameManager.playerNegativeScore += chosenLE.negative;
             GameManager.playerChoiceHistory.Add(chosenLE.eventID);
@@ -195,6 +207,13 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     }
     public void goToCutscene()
     {
-        SceneManager.LoadScene(cutScene);
+        GameManager.playerQueue = letterQueue;
+        StartCoroutine(loadAfterDelay(cutScene,fadeToBlack.duration));
+    }
+    public IEnumerator loadAfterDelay(string sceneName, float delay)
+    {
+        fadeToBlack.startColorChange();
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 }
