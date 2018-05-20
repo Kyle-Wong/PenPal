@@ -12,6 +12,7 @@ public class CutSceneManager : MonoBehaviour {
     public float timer;
     public int duration;
     string futureNP;
+    string NarLength;
     private GraphicColorLerp titleColorLerp;
     private GraphicColorLerp flavorColorLerp;
     Queue<LetterEvent> cutSceneQueue;
@@ -25,27 +26,32 @@ public class CutSceneManager : MonoBehaviour {
         curIndex = cutSceneQueue.Dequeue();
         cutSceneTitle.text = "Next Chapter";
         narrativePrompt.text = " ";
-        futureNP = " ";           
+        futureNP = " ";       
+    
 
         //timer = 5;
 
-        duration = 3;
-        titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
-        titleColorLerp.duration = duration;
-        titleColorLerp.startColorChange();
-        flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();
-        flavorColorLerp.initialDelay = duration;
-        flavorColorLerp.duration = duration*2;
-        flavorColorLerp.startColorChange();
+
         while (queueCount > 0)
         {
-            futureNP += " ";
-            futureNP += curIndex.text;
+            
+            NarLength += curIndex.text;
             queueCount--;
             curIndex = cutSceneQueue.Dequeue();
+            NarLength += " ";
         }
 
-        duration = futureNP.Length / 3;
+
+        titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
+        flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();
+        duration = NarLength.Length / 3;
+        titleColorLerp.duration = 3;
+         
+        titleColorLerp.startColorChange();        
+        flavorColorLerp.startColorChange();
+
+        flavorColorLerp.duration = duration;
+        futureNP = NarLength;
  
 	}
 	
@@ -54,11 +60,13 @@ public class CutSceneManager : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-        if (timer >= duration)
+
+        if (timer >= 3.0)
         {
             //cutSceneTitle.text = " ";                  
             narrativePrompt.text = futureNP;
         }
         
+
 	}
 }

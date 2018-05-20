@@ -70,7 +70,7 @@ public class CSVParser : MonoBehaviour {
 		}
 	}
 	private LetterEvent.Type ResolveLetterType(string type, int i) {
-		if (type.Equals("intro")) {
+		if (type.Equals("greeting")) {
 			return LetterEvent.Type.INTRO;
 		} else if (type.Equals("sentence")) {
 			return LetterEvent.Type.SENTENCE;

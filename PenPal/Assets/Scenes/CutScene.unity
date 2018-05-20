@@ -794,6 +794,7 @@ MonoBehaviour:
   cutSceneTitle: {fileID: 866266423}
   narrativePrompt: {fileID: 1826385540}
   timer: 0
+  duration: 0
 --- !u!4 &1199805500
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,12 +1158,12 @@ Prefab:
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 22
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 26
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
@@ -1177,7 +1178,7 @@ Prefab:
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
@@ -1192,7 +1193,7 @@ Prefab:
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.45
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
@@ -1222,6 +1223,26 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_BestFit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662109296042848, guid: dcfeeb99b66bc44448eb4935a07ef386,
+        type: 2}
+      propertyPath: m_EffectColor.r
+      value: 0.14135115
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662109296042848, guid: dcfeeb99b66bc44448eb4935a07ef386,
+        type: 2}
+      propertyPath: m_EffectColor.g
+      value: 0.06132078
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662109296042848, guid: dcfeeb99b66bc44448eb4935a07ef386,
+        type: 2}
+      propertyPath: m_EffectColor.b
+      value: 0.9843137
+      objectReference: {fileID: 0}
+    - target: {fileID: 114662109296042848, guid: dcfeeb99b66bc44448eb4935a07ef386,
+        type: 2}
+      propertyPath: m_EffectColor.a
+      value: 0.73333335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcfeeb99b66bc44448eb4935a07ef386, type: 2}

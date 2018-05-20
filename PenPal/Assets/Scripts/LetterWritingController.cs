@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LetterWritingController : MonoBehaviour {
+public class LetterWritingController : MonoBehaviour, ILetterController {
 
     // Use this for initialization
-    
-    private int state = 0;
+    public enum State
+    {
+        LetterWriting,
+        LetterDone,
+    }
+    private State state = State.LetterWriting;
     public TextMesh[] buttonList;
     private TextMeshWrapper[] wrappers;
     public SequentialText headerRevealer;
@@ -24,6 +29,8 @@ public class LetterWritingController : MonoBehaviour {
     LetterEvent chosenLE;
     private int lineCount;
     private bool waitingForInput;
+    public string cutScene;
+    public GameObject sendButton;
 
     private void Awake()
     {
@@ -40,45 +47,54 @@ public class LetterWritingController : MonoBehaviour {
         {
             wrappers[i] = buttonList[i].GetComponent<TextMeshWrapper>();
         }
+        sendButton.SetActive(false);
     }
 
     // Update is called once per frame
     void Update () {
-        switch (currentLE.type)
+        if (state == State.LetterWriting)
         {
-            case (LetterEvent.Type.INTRO):
-                headerRevealer.begin();
-                headerRevealer.setText(buildHeader());
-                break;
-            case (LetterEvent.Type.SENTENCE):
-                if (headerRevealer.playing() || waitingForInput)
+            switch (currentLE.type)
+            {
+                case (LetterEvent.Type.INTRO):
+                    headerRevealer.begin();
+                    headerRevealer.setText(buildHeader());
                     break;
-                bodyRevealer.begin();
-                string paragraph = buildParagraph();
-                bodyRevealer.addText(paragraph);
-                break;
-            case (LetterEvent.Type.CLOSING):
-                if (bodyRevealer.playing() || waitingForInput)
+                case (LetterEvent.Type.SENTENCE):
+                    if (headerRevealer.playing() || waitingForInput)
+                        break;
+                    bodyRevealer.begin();
+                    string paragraph = buildParagraph();
+                    bodyRevealer.addText(paragraph);
                     break;
-                closingRevealer.begin();
-                closingRevealer.setText(buildClosing());
-                break;
-            case (LetterEvent.Type.CHOICE):
-                if(choices == null)
-                {
-                    choices = getChoices();
-                }
-                break;
-            case LetterEvent.Type.EOP:
-                headerRevealer.allText += '\n';
-                currentLE = letterQueue.Dequeue();
-                break;
-            case LetterEvent.Type.EOL:
-                //do nothing
-                break;
-            case LetterEvent.Type.ERROR:
-                Debug.Log("ERROR");
-                break;
+                case (LetterEvent.Type.CLOSING):
+                    if (bodyRevealer.playing() || waitingForInput)
+                        break;
+                    closingRevealer.begin();
+                    closingRevealer.setText(buildClosing());
+                    break;
+                case (LetterEvent.Type.CHOICE):
+                    if (bodyRevealer.playing())
+                        break;
+                    if (choices == null)
+                    {
+                        choices = getChoices();
+                    }
+                    break;
+                case LetterEvent.Type.EOP:
+                    headerRevealer.allText += '\n';
+                    currentLE = letterQueue.Dequeue();
+                    break;
+                case LetterEvent.Type.EOL:
+                    state = State.LetterDone;
+                    break;
+                case LetterEvent.Type.ERROR:
+                    Debug.Log("ERROR");
+                    break;
+            }
+        } else if(state == State.LetterDone)
+        {
+            sendButton.SetActive(true);
         }
 	}
     public string buildHeader()
@@ -165,7 +181,16 @@ public class LetterWritingController : MonoBehaviour {
             bodyRevealer.addText(" " + chosenLE.text);
             GameManager.playerPositiveScore += chosenLE.positive;
             GameManager.playerNegativeScore += chosenLE.negative;
+            GameManager.playerChoiceHistory.Add(chosenLE.eventID);
         }
 
+    }
+    public State getState()
+    {
+        return state;
+    }
+    public void goToCutscene()
+    {
+        SceneManager.LoadScene(cutScene);
     }
 }
