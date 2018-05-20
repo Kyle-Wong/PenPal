@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LetterWritingController : MonoBehaviour, ILetterController {
 
@@ -28,7 +29,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     LetterEvent chosenLE;
     private int lineCount;
     private bool waitingForInput;
-
+    public string cutScene;
     private void Awake()
     {
         headerRevealer.charDelay = charDelay;
@@ -179,5 +180,9 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     public State getState()
     {
         return state;
+    }
+    public void goToCutscene()
+    {
+        SceneManager.LoadScene(cutScene);
     }
 }
