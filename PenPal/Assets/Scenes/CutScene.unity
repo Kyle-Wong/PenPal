@@ -241,7 +241,17 @@ Prefab:
     - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
       propertyPath: initialDelay
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: duration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531133942876052, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e71d0a7c8eb378e41939aef484fa3bb5, type: 2}
@@ -786,6 +796,10 @@ MonoBehaviour:
   timer: 1
   duration: 3
   switchPrompt: 0
+  prompt1: {fileID: 1826385540}
+  prompt2: {fileID: 224070294}
+  holdDuration: 6
+  gapBetweenSentences: 0.5
 --- !u!4 &1199805500
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,7 +1203,7 @@ Prefab:
     - target: {fileID: 224822529430238342, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.80000305
+      value: -0.8000183
       objectReference: {fileID: 0}
     - target: {fileID: 224822529430238342, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
@@ -1240,6 +1254,16 @@ Prefab:
         type: 2}
       propertyPath: endColor.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: duration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114531133942876052, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e71d0a7c8eb378e41939aef484fa3bb5, type: 2}
