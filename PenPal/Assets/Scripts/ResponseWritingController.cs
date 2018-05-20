@@ -49,6 +49,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
                     result += currentLE.text;
                     break;
 				case LetterEvent.Type.CLOSING:
+					result += checkForMadLibs();
 					closing.text = buildClosing();
 					break;
                 case LetterEvent.Type.CHOICE:
@@ -82,6 +83,15 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 			}
 		}
         return "BAD CHOICE MADE";
+	}
+
+	private string checkForMadLibs() {
+		string ret = "";
+		if (GameManager.madLibsResults.Count > 0) {
+			ret += "P.S. Here's the madlibs results:\n";
+			ret += GameManager.madLibsResults.Dequeue();
+		}
+		return ret;
 	}
 	
 	public void pressContinueButton() {

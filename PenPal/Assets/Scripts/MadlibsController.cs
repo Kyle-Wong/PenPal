@@ -15,7 +15,6 @@ public class MadlibsController : MonoBehaviour, ILetterController {
     private Queue<MadlibsEvent> madlibsQueue;
 	private List<MadlibsEvent> madlibsHistory;
     private MadlibsEvent currentMLE;
-	//Pray that we never change this... 
 	public GraphicColorLerp fadeToBlack;
     public GraphicColorLerp fadeToTransparent;
 
@@ -24,6 +23,7 @@ public class MadlibsController : MonoBehaviour, ILetterController {
 		madlibsHistory = new List<MadlibsEvent>();
 
 		header.text = buildHeader();
+		HideAllPrompts();
 		PopulatePrompts();
     }
 
@@ -40,11 +40,19 @@ public class MadlibsController : MonoBehaviour, ILetterController {
         //this will probably be a "send/finish" button
     }*/
 
+	void HideAllPrompts() {
+		for (int i = 0; i < inputs.Length; ++i) {
+			inputs[i].gameObject.SetActive(false);
+			labels[i].gameObject.SetActive(false);
+		}
+	}
 	void PopulatePrompts() {
 		currentMLE = madlibsQueue.Dequeue();
 		int labelIndex = 0;
 		while (currentMLE.groupID != -1) { //my version of EOL
 			madlibsHistory.Add(currentMLE);
+			labels[labelIndex].gameObject.SetActive(true);
+			inputs[labelIndex].gameObject.SetActive(true);
 			labels[labelIndex++].text = currentMLE.prompt;
 			currentMLE = madlibsQueue.Dequeue();
 		}
@@ -54,6 +62,7 @@ public class MadlibsController : MonoBehaviour, ILetterController {
 		string buf = "";
 		for(int i = 0; i < madlibsHistory.Count; ++i) {
 			buf+= madlibsHistory[i].text.Replace("{}", inputs[i].text);
+			buf+= " ";
 		}
 		GameManager.madLibsResults.Enqueue(buf);
 		Debug.Log(buf);
