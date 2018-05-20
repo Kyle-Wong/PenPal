@@ -19,7 +19,9 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     public SequentialText bodyRevealer;
     public SequentialText closingRevealer;
 
-    public float charDelay;
+    private float charDelay;
+    public float regularDelay;
+    public float shortDelay;
     public TextMesh header;
     public TextMesh body;
     public TextMesh closing;
@@ -31,10 +33,12 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     private bool waitingForInput;
     public string cutScene;
     public GameObject sendButton;
+    public GameObject sendText;
     public GraphicColorLerp fadeToBlack;
     public GraphicColorLerp fadeToTransparent;
     public float initialDelayDuration;
     private float initialDelayTimer = 0;
+    public bool inFastForward;
     private void Awake()
     {
         headerRevealer.charDelay = charDelay;
@@ -51,6 +55,19 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             wrappers[i] = buttonList[i].GetComponent<TextMeshWrapper>();
         }
         sendButton.SetActive(false);
+        sendText.SetActive(false);
+        if (inFastForward)
+        {
+            headerRevealer.charDelay = shortDelay;
+            bodyRevealer.charDelay = shortDelay;
+            closingRevealer.charDelay = shortDelay;
+        }
+        else
+        {
+            headerRevealer.charDelay = regularDelay;
+            bodyRevealer.charDelay = regularDelay;
+            closingRevealer.charDelay = regularDelay;
+        }
     }
 
     // Update is called once per frame
@@ -105,6 +122,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             else if (state == State.LetterDone)
             {
                 sendButton.SetActive(true);
+                sendText.SetActive(true);
             }
         }
 	}
@@ -213,7 +231,24 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     public IEnumerator loadAfterDelay(string sceneName, float delay)
     {
         fadeToBlack.startColorChange();
+        sendButton.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
+    public void toggleFastForward()
+    {
+        inFastForward = !inFastForward;
+        if (inFastForward)
+        {
+            headerRevealer.charDelay = shortDelay;
+            bodyRevealer.charDelay = shortDelay;
+            closingRevealer.charDelay = shortDelay;
+        } else
+        {
+            headerRevealer.charDelay = regularDelay;
+            bodyRevealer.charDelay = regularDelay;
+            closingRevealer.charDelay = regularDelay;
+        }
+    }
+
 }
