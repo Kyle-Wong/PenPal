@@ -163,7 +163,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
                     breakLoop = true;
                     break;
                 case LetterEvent.Type.EOP:
-                    result += "\n";
+                    result += "\n\n ";
                     breakLoop = true;
                     break;
                 case LetterEvent.Type.EOL:
