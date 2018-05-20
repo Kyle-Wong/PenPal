@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour {
     public Canvas inputCanvas;
     public InputField nameBox;
     public GameObject playButton;
+    private AudioSource source;
     public enum State
     {
         MainMenu,
@@ -24,6 +25,7 @@ public class MenuController : MonoBehaviour {
     }
     private State state = State.MainMenu;
 	void Start () {
+        source = GetComponent<AudioSource>();
         inputCanvas.enabled = false;
 	}
 	
@@ -41,6 +43,9 @@ public class MenuController : MonoBehaviour {
                 }
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
+                    if (nameBox.text.Trim() == "")
+                        return;
+                    source.PlayOneShot(source.clip);
                     startGame();
                 }
                 if (Input.GetKeyDown(KeyCode.Tab))
@@ -71,6 +76,7 @@ public class MenuController : MonoBehaviour {
         mainMenuButtons.SetActive(false);
         inputCanvas.enabled = true;
         eventSystem.SetSelectedGameObject(nameBox.gameObject);
+        state = State.AtInputField;
        
     }
     public void goToCredits()
