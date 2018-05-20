@@ -794,7 +794,6 @@ MonoBehaviour:
   cutSceneTitle: {fileID: 866266423}
   narrativePrompt: {fileID: 1826385540}
   timer: 0
-  duration: 0
 --- !u!4 &1199805500
 Transform:
   m_ObjectHideFlags: 0
