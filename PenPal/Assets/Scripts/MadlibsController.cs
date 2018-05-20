@@ -68,6 +68,11 @@ public class MadlibsController : MonoBehaviour, ILetterController {
 		Debug.Log(buf);
 	}
    public void clickSendButton() {
+        for(int i = 0; i < madlibsHistory.Count; i++)
+        {
+            if (inputs[i].text.Trim() == "")
+                return;
+        }
 	   	PopulateResults();
         StartCoroutine(loadAfterDelay(cutScene,fadeToBlack.duration));
    }
