@@ -11,7 +11,7 @@ public class CutSceneManager : MonoBehaviour {
     public Text narrativePrompt;
     public float timer;
     public int duration;
-    string futureNP;
+    //string futureNP;
     string NarLength;
     private GraphicColorLerp titleColorLerp;
     private GraphicColorLerp flavorColorLerp;
@@ -21,38 +21,38 @@ public class CutSceneManager : MonoBehaviour {
 	void Start () {
         cutSceneQueue = GameManager.narrativeQueue;
 
-        int queueCount = cutSceneQueue.Count; 
-        
-        curIndex = cutSceneQueue.Dequeue();
         cutSceneTitle.text = "Next Chapter";
+        
         narrativePrompt.text = " ";
-        futureNP = " ";       
-    
 
-        //timer = 5;
+        NarLength = " ";
+        curIndex = cutSceneQueue.Dequeue();
 
+        //futureNP = " ";
 
-        while (queueCount > 0)
+        while (cutSceneQueue.Count > 0)
         {
-            
             NarLength += curIndex.text;
-            queueCount--;
             curIndex = cutSceneQueue.Dequeue();
             NarLength += " ";
         }
 
-
         titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
+        
         flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();
-        duration = NarLength.Length / 3;
-        titleColorLerp.duration = 3;
-         
+
+        //titleColorLerp.duration = 5; //set the next chapter duration to five
+
+        
+        //flavorColorLerp.duration = 5;       
+
+        
         titleColorLerp.startColorChange();        
+        
         flavorColorLerp.startColorChange();
 
-        flavorColorLerp.duration = duration;
-        futureNP = NarLength;
- 
+        flavorColorLerp.initialDelay = 5;
+
 	}
 	
 	// Update is called once per frame
@@ -61,12 +61,20 @@ public class CutSceneManager : MonoBehaviour {
         timer += Time.deltaTime;
 
 
-        if (timer >= 3.0)
+        if (timer >= 5.0)
         {
+            cutSceneTitle.text = " ";
+
+            //narrativePrompt.text = "Ready for battle!";
             //cutSceneTitle.text = " ";                  
-            narrativePrompt.text = futureNP;
+            narrativePrompt.text = NarLength;            
+
+        }
+
+        if (timer >= 10.0)
+        {
+            narrativePrompt.text = " ";
         }
         
-
 	}
 }

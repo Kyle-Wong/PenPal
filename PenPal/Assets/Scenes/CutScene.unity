@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -656,9 +656,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOn: 2
-  startColor: {r: 1, g: 1, b: 1, a: 1}
-  endColor: {r: 1, g: 1, b: 1, a: 0}
-  duration: 0
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  endColor: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
   initialDelay: 0
 --- !u!1 &1025516367
 GameObject:
@@ -1158,12 +1158,12 @@ Prefab:
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.8
+      value: -0.80000305
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.1
+      value: -0.099998474
       objectReference: {fileID: 0}
     - target: {fileID: 224386582812739970, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
@@ -1275,10 +1275,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOn: 2
-  startColor: {r: 0.9121844, g: 0.9528302, b: 0.8944019, a: 1}
-  endColor: {r: 1, g: 1, b: 1, a: 0}
-  duration: 0
-  initialDelay: 0
+  startColor: {r: 0.9121844, g: 0.9528302, b: 0.8944019, a: 0}
+  endColor: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1
+  initialDelay: 5
 --- !u!1 &2049021375
 GameObject:
   m_ObjectHideFlags: 0
