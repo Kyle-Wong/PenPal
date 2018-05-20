@@ -257,7 +257,7 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 4966deb135b7367469a7aa744c8407ce,
+      objectReference: {fileID: 12800000, guid: e4d31d90f7164264d9af606b3fd7545e,
         type: 3}
     - target: {fileID: 114531133942876052, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
@@ -1280,7 +1280,7 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 4966deb135b7367469a7aa744c8407ce,
+      objectReference: {fileID: 12800000, guid: e4d31d90f7164264d9af606b3fd7545e,
         type: 3}
     - target: {fileID: 114531133942876052, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
