@@ -10,8 +10,10 @@ public class CutSceneManager : MonoBehaviour {
     public Image background;
     //public Text cutSceneTitle;
     public Text narrativePrompt;
+    public Text narPrompt2;
     public float timer;
     public float duration;
+    public int switchPrompt;
     //string futureNP;
     string NarLength;
     private GraphicColorLerp titleColorLerp;
@@ -23,8 +25,11 @@ public class CutSceneManager : MonoBehaviour {
         cutSceneQueue = GameManager.narrativeQueue;
 
         //cutSceneTitle.text = "Next Chapter";
+
+        switchPrompt = 1;
         
         narrativePrompt.text = " ";
+        narPrompt2.text = " ";
 
         //NarLength = " ";
         if (cutSceneQueue.Count > 0)
@@ -54,7 +59,9 @@ public class CutSceneManager : MonoBehaviour {
             //cutSceneTitle.text = " ";                  
             if (curIndex.type == LetterEvent.Type.SENTENCE)
             {
-                narrativePrompt.text = curIndex.text;
+                //.text = curIndex.text;
+                
+                narPrompt2.text = curIndex.text;
                 //show current index message
             }
 
