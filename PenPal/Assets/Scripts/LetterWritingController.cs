@@ -30,6 +30,8 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     private int lineCount;
     private bool waitingForInput;
     public string cutScene;
+    public GameObject sendButton;
+
     private void Awake()
     {
         headerRevealer.charDelay = charDelay;
@@ -45,6 +47,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
         {
             wrappers[i] = buttonList[i].GetComponent<TextMeshWrapper>();
         }
+        sendButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -71,6 +74,8 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
                     closingRevealer.setText(buildClosing());
                     break;
                 case (LetterEvent.Type.CHOICE):
+                    if (bodyRevealer.playing())
+                        break;
                     if (choices == null)
                     {
                         choices = getChoices();
@@ -87,6 +92,9 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
                     Debug.Log("ERROR");
                     break;
             }
+        } else if(state == State.LetterDone)
+        {
+            sendButton.SetActive(true);
         }
 	}
     public string buildHeader()

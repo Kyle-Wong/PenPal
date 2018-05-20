@@ -30,17 +30,16 @@ public class TextMeshWrapper : MonoBehaviour {
     {
         if (words.Length == 0)
             return;
-        textMesh.text = words[0];
-        for(var i = 1; i < words.Length; i++)
+        for(var i = 0; i < words.Length; i++)
         {
             int len = textMesh.text.Length;
-            textMesh.text += ' ' + words[i];
+            textMesh.text += words[i] + ' ';
             if(textMesh.GetComponent<Renderer>().bounds.extents.x > lineLength)
             {
-                textMesh.text = textMesh.text.Substring(0, len) + '\n' + words[i];
+                textMesh.text = textMesh.text.Substring(0, len) + '\n' + words[i] + ' ';
             }
         }
-
+        textMesh.text = textMesh.text.Replace("\n ", "\n");
     }
     public string getWrappedString(string s)
     {
