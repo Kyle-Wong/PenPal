@@ -2598,9 +2598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24751114109e8d147bea4d9d23dc0578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 50
+  scrollSpeed: 20
   minY: -1.28
-  maxY: 18.5
+  maxY: 7.8
   textMesh: {fileID: 376641880}
   autoScroll: 1
   autoScrollingStartY: 0

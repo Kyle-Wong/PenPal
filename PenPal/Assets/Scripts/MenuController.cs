@@ -58,6 +58,8 @@ public class MenuController : MonoBehaviour {
     {
         if (!allowInput)
             return;
+        if (nameBox.text.Trim() == "")
+            return;
         GameManager.playerName = nameBox.text;
         allowInput = false;
         eventSystem.SetSelectedGameObject(null);
@@ -65,6 +67,7 @@ public class MenuController : MonoBehaviour {
     }
     public void goToInputField()
     {
+
         mainMenuButtons.SetActive(false);
         inputCanvas.enabled = true;
         eventSystem.SetSelectedGameObject(nameBox.gameObject);
