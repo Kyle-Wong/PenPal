@@ -47,7 +47,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 					header.text = buildHeader();
 					break;
                 case LetterEvent.Type.SENTENCE:
-                    result += currentLE.text.Replace("[player]", GameManager.playerName);
+                    result += " " + currentLE.text.Replace("[player]", GameManager.playerName);
                     break;
 				case LetterEvent.Type.CLOSING:
 					result += checkForMadLibs();
