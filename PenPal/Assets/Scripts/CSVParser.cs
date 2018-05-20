@@ -48,6 +48,7 @@ public class CSVParser : MonoBehaviour {
 				e.negative = Convert.ToInt32(entry[7]);
 			if (!entry[8].Equals(""))
 				e.relatedToID = Convert.ToInt32(entry[8]);
+			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.playerQueue.Enqueue(e);
 		} else if (entry[1].Equals("narrative")) {
 			e.speaker = LetterEvent.Speaker.NARRATIVE;
@@ -61,6 +62,7 @@ public class CSVParser : MonoBehaviour {
 				e.negative = Convert.ToInt32(entry[7]);
 			if (!entry[8].Equals(""))
 				e.relatedToID = Convert.ToInt32(entry[8]);
+			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.narrativeQueue.Enqueue(e);
 		} else if (entry[1].Equals("pal")) {
 			e.speaker = LetterEvent.Speaker.PAL;
@@ -74,6 +76,7 @@ public class CSVParser : MonoBehaviour {
 				e.negative = Convert.ToInt32(entry[7]);
 			if (!entry[8].Equals(""))
 				e.relatedToID = Convert.ToInt32(entry[8]);
+			e.goToNext = ResolveSpeakerType(entry[9]);
 			GameManager.palQueue.Enqueue(e);
 		} else {
 			Debug.Log("Error: cannot resolve speaker for entry " + entry[1] + i.ToString());
@@ -95,6 +98,20 @@ public class CSVParser : MonoBehaviour {
 		} else {
 			Debug.Log("Error: could not resolve type for entry " + i.ToString());
 			return LetterEvent.Type.ERROR;
+		}
+	}
+
+	private LetterEvent.Speaker ResolveSpeakerType(string type) {
+		if (type.Equals("player")) {
+			return LetterEvent.Speaker.PLAYER;
+		} else if (type.Equals("narrative")) {
+			return LetterEvent.Speaker.NARRATIVE;
+		} else if (type.Equals("pal")) {
+			return LetterEvent.Speaker.PAL;
+		} else if (type.Equals("madlibs")) {
+			return LetterEvent.Speaker.MADLIBS;
+		} else {
+			return LetterEvent.Speaker.NONE;
 		}
 	}
 

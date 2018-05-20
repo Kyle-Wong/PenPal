@@ -7,7 +7,9 @@ public class LetterEvent {
 	public enum Speaker {
 		PLAYER,
 		PAL,
-		NARRATIVE
+		NARRATIVE,
+		MADLIBS,
+		NONE
 	}
 	public enum Type {
 		INTRO,
@@ -38,4 +40,6 @@ public class LetterEvent {
 	//Sometimes, the pal's response will have a "related to ID" to indiciate to only write
 	//with this choice if the player chose to respond with the event ID indicated. So lifelike!
 	public int relatedToID = -1;
+	//Which speaker type to go to
+	public Speaker goToNext;
 }
