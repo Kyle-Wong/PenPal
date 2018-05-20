@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 public static class GameManager {
-	private static float totalPlayerPositiveScore;
-	private static float totalPlayerNegativeScore;
+	public static float totalPlayerPositiveScore;
+	public static float totalPlayerNegativeScore;
 	public static string playerName = "Default Playername";
 	public static float playerPositiveScore;
 	public static float playerNegativeScore;

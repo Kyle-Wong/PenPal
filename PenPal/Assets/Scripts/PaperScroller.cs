@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PaperScroller : MonoBehaviour {
 
@@ -11,13 +12,30 @@ public class PaperScroller : MonoBehaviour {
     public float maxY;
     private float mouseDiff;
     private Camera mainCam;
-	void Start () {
+    public TextMesh textMesh;
+    private float oldHeight;
+    private float newHeight;
+    public bool autoScroll = false;
+    public float autoScrollingStartY;
+    private bool firstScroll = true;
+    private float scrollHeight = 0;
+    private void Awake()
+    {
+        
+    }
+    void Start () {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LetterWritingController>();
         if (gameController == null) //i assume if this fails, i need to find ResponseWritingController
                 gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResponseWritingController>();
         if (gameController == null)
                 gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<MadlibsController>();
         mainCam = Camera.main;
+        if (autoScroll)
+        {
+            newHeight = textMesh.GetComponent<Renderer>().bounds.extents.y;
+            oldHeight = newHeight;
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -49,6 +67,22 @@ public class PaperScroller : MonoBehaviour {
         if (transform.position.y < minY)
         {
             transform.position = new Vector3(transform.position.x, minY, transform.position.z);
+        }
+      
+        if (autoScroll)
+        {
+            newHeight = textMesh.GetComponent<Renderer>().bounds.extents.y;
+            
+            if (newHeight > autoScrollingStartY && oldHeight < newHeight)
+            {
+                if (firstScroll)
+                {
+                    scrollHeight = (newHeight - oldHeight);
+                    firstScroll = false;
+                }
+                transform.position += Vector3.up * scrollHeight;
+            }
+            oldHeight = newHeight;
         }
     }
     
