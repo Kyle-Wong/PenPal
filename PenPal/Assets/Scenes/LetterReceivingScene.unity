@@ -1427,9 +1427,43 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 446874912}
-  m_Text: '
+  m_Text: 'a
 
-'
+    a
+
+    a
+
+    a
+
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+    a
+
+
+    a
+
+    a
+
+    a'
   m_OffsetZ: 0
   m_CharacterSize: 0.0905
   m_LineSpacing: 1
@@ -1531,7 +1565,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520721564}
-  m_Text: 
+  m_Text: asdf
   m_OffsetZ: 0
   m_CharacterSize: 0.092
   m_LineSpacing: 1
@@ -2337,8 +2371,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 992401041}
   m_LocalRotation: {x: 0, y: 0, z: -0.0052359584, w: 0.9999863}
-  m_LocalPosition: {x: -0.6144447, y: -3.3, z: 0.07682683}
-  m_LocalScale: {x: 1.8, y: 1.33, z: 1}
+  m_LocalPosition: {x: -0.6144447, y: -2.98, z: 0.07682683}
+  m_LocalScale: {x: 1.8, y: 1.356, z: 1}
   m_Children: []
   m_Father: {fileID: 1209948995}
   m_RootOrder: 0
