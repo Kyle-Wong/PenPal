@@ -24,17 +24,14 @@ public class EndGameManager : MonoBehaviour {
 	}
 
 	void InitializeBarSummary() {
-		//float sum = GameManager.totalPlayerPositiveScore + GameManager.totalPlayerNegativeScore;
-		float sum = 110;
-		float normalPos = 5 / sum;
-		//float normalPos = GameManager.totalPlayerPositiveScore / sum;
+		float sum = GameManager.totalPlayerPositiveScore + GameManager.totalPlayerNegativeScore;
+		float normalPos = GameManager.totalPlayerPositiveScore / sum;
 		posHolder.transform.localScale = new Vector3(normalPos, 1, 1);
 	}
 
 	void InitializeFillIns() {
 		for (int i = 0; i < fillIns.Length; ++i) {
-			//List<float> currentHistory = GameManager.playerScoreHistory[i];
-			List<float> currentHistory = new List<float>(){1.0f, 0.0f};
+			List<float> currentHistory = GameManager.playerScoreHistory[i];
 			if (currentHistory[0] > currentHistory[1])
 				fillIns[i].text = GetNextPositive(i); 
 			else if (currentHistory[0] < currentHistory[1]) 
