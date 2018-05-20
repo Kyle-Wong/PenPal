@@ -1,60 +1,61 @@
-ID	SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG	RELATED TO ID
-1	narrative	1	sentence	Our class has been given a pen pal assignment.		0	0	-1
-2	narrative	1	sentence	The teacher is making us write a letter and send it out.		0	0	-1
-3	narrative	1	sentence	I hope that my pen pal is at least cool?		0	0	-1
-4	narrative	1	EOL			0	0	-1
-5	player	1	greeting	To Pen Pal,		0	0	-1
-6	player	1	sentence	My teacher is making me write this letter. She’s very mean.		0	0	-1
-7	player	1	sentence	I don't like that she makes us do hard math problems.		0	0	-1
-8	player	1	EOP			0	0	-1
-9	player	1	choice	How about you? Do you hate math too?		1	0	-1
-10	player	1	choice	Math is my worst subject. I’m really bad at numbers.		0	0	-1
-11	player	1	choice	I really don’t want to write this letter either. It’s such a dumb thing to do.		0	1	-1
-12	player	1	EOP			0	0	-1
-13	player	1	sentence	That’s really all I have to say.		0	0	-1
-14	player	1	choice	Nice to meet you. I hope we can be friends.		1	0	-1
-15	player	1	choice	So write me back to me? I guess. 		0	0	-1
-16	player	1	choice	Write a letter back. Or not. I don’t really care. 		0	1	-1
-17	player	1	sentence	I look forward to hearing back!		0	0	-1
-18	player	1	closing	From, [player]		0	0	-1
-19	player	1	EOL			0	0	-1
-20	narrative	1	sentence	As I passed my letter over, I began to wonder if I’ll get a response.		0	0	-1
-21	narrative	1	sentence	One week later...		0	0	-1
-22	narrative	1	sentence	Once our teacher started handing out letters, I was surprised to see one with my name on it.		0	0	-1
-23	narrative	1	EOL			0	0	-1
-24	pal	1	greeting	To [player]!		0	0	-1
-25	pal	1	sentence	This is me writing back to you as you requested in your letter.		0	0	-1
-26	pal	1	sentence	I think that homework assignments are a thing to be taken seriously no matter how mean your teacher is.		0	0	-1
-27	pal	1	choice	I’m actually pretty amazing at math. English isn’t my strong suit however.		0	0	8
-28	pal	1	choice	It’s completely understandable. Not everyone can be good at math. 		0	0	9
-29	pal	1	choice	That’s rude to say to a stranger that you’d rather not be writing to them. 		0	0	-1
-30	pal	1	EOP			0	0	-1
-31	pal	1	sentence	Other than that, I have nothing else to talk about.		0	0	-1
-32	pal	1	choice	It’s very nice to meet you too. I would like to be friends as well. 		0	0	-1
-33	pal	1	choice	You’ve gotten a response back to your letter as you wanted. So what now? 		0	0	-1
-34	pal	1	choice	If you don’t care, then why are you even writing? 		0	0	-1
-35	pal	1	closing	From, [Pen pal]		0	0	-1
-36	pal	1	EOL			0	0	-1
-37	narrative	1	sentence	My pen pal seemed … interesting.		0	0	-1
-38	narrative	1	sentence	To my surprise, I wanted to see what else they had to say.		0	0	-1
-39	narrative	1	sentence	I took out another sheet of paper and started writing.		0	0	-1
-40	narrative	1	sentence	To [Pen pal]...		0	0	-1
-41	narrative	2	sentence	2 years later,		0	0	-1
-42	narrative	2	sentence	As middle school started, the letters continued to pile.		0	0	-1
-43	narrative	2	EOL			0	0	-1
-44	player	2	greeting	To [Pen pal],		0	0	-1
-45	player	2	sentence	I’m getting swamped with projects left and right.		0	0	-1
-46	player	2	sentence	I have an persuasive essay due tomorrow and		0	0	-1
-47	player	2	sentence	I have to make a powerpoint for my history class.		0	0	-1
-48	player	2	choice	Is there anything that you’re working on right now?		1	0	-1
-49	player	2	choice	I’m so tired. I can’t believe we have to do this much work just to get a good grade. 		0	0	-1
-50	player	2	choice	At this point, I’m ready to copy/paste something from W*kipedia just to get it done.		0	1	-1
-51	player	2	sentence	I don’t even know how the other students can keep up with six different classes.		0	0	-1
-52	player	2	sentence	This is so ridiculous, I can't even.		0	0	-1
-53	player	2	sentence	There’s a midterm next week and I’m ready to just		0	0	-1
-54	player	2	choice	go to study sessions and use my notes to prepare.		1	0	-1
-55	player	2	choice	pull an all-nighter and cram the night before. 		0	0	-1
-56	player	2	choice	cheat to get it over with, I’m sure the guy sitting next to me won’t mind. 		0	1	-1
-57	player	2	sentence	So how’ve you been doing? Sounds like you’ve been working hard.		0	0	-1
-58	player	2	sentence	Are your honors classes that you mentioned last time really difficult?		0	0	-1
-59	player	2	closing	From, [player]		0	0	-1
+ID	SPEAKER	GROUP	TYPE	TEXT	PROMPT	POS	NEG	RELATED TO ID	GOTO
+1	narrative	1	sentence	Our class has been given a pen pal assignment.		0	0	-1	none
+2	narrative	1	sentence	The teacher is making us write a letter and send it out.		0	0	-1	none
+3	narrative	1	sentence	I hope that my pen pal is at least cool?		0	0	-1	none
+4	narrative	1	EOL			0	0	-1	player
+5	player	1	greeting	To Pen Pal,		0	0	-1	none
+6	player	1	sentence	My teacher is making me write this letter. She’s very mean.		0	0	-1	none
+7	player	1	sentence	I don't like that she makes us do hard math problems.		0	0	-1	none
+8	player	1	EOP			0	0	-1	none
+9	player	1	choice	How about you? Do you hate math too?		1	0	-1	none
+10	player	1	choice	Math is my worst subject. I’m really bad at numbers.		0	0	-1	none
+11	player	1	choice	I really don’t want to write this letter either. It’s such a dumb thing to do.		0	1	-1	none
+12	player	1	EOP			0	0	-1	none
+13	player	1	sentence	That’s really all I have to say.		0	0	-1	none
+14	player	1	choice	Nice to meet you. I hope we can be friends.		1	0	-1	none
+15	player	1	choice	So write me back to me? I guess. 		0	0	-1	none
+16	player	1	choice	Write a letter back. Or not. I don’t really care. 		0	1	-1	none
+17	player	1	sentence	I look forward to hearing back!		0	0	-1	none
+18	player	1	closing	From, [player]		0	0	-1	none
+19	player	1	EOL			0	0	-1	narrative
+20	narrative	1	sentence	As I passed my letter over, I began to wonder if I’ll get a response.		0	0	-1	none
+21	narrative	1	sentence	One week later...		0	0	-1	none
+22	narrative	1	sentence	Once our teacher started handing out letters, I was surprised to see one with my name on it.		0	0	-1	none
+23	narrative	1	EOL			0	0	-1	pal
+24	pal	1	greeting	To [player],		0	0	-1	none
+25	pal	1	sentence	This is me writing back to you as you requested in your letter.		0	0	-1	none
+26	pal	1	sentence	I think that homework assignments are a thing to be taken seriously no matter how mean your teacher is.		0	0	-1	none
+27	pal	1	choice	I’m actually pretty amazing at math. English isn’t my strong suit however.		0	0	8	none
+28	pal	1	choice	It’s completely understandable. Not everyone can be good at math. 		0	0	9	none
+29	pal	1	choice	That’s rude to say to a stranger that you’d rather not be writing to them. 		0	0	-1	none
+30	pal	1	EOP			0	0	-1	none
+31	pal	1	sentence	Other than that, I have nothing else to talk about.		0	0	-1	none
+32	pal	1	choice	It’s very nice to meet you too. I would like to be friends as well. 		0	0	-1	none
+33	pal	1	choice	You’ve gotten a response back to your letter as you wanted. So what now? 		0	0	-1	none
+34	pal	1	choice	If you don’t care, then why are you even writing? 		0	0	-1	none
+35	pal	1	closing	From, [Pen pal]		0	0	-1	none
+36	pal	1	EOL			0	0	-1	narrative
+37	narrative	1	sentence	My pen pal seemed … interesting.		0	0	-1	none
+38	narrative	1	sentence	To my surprise, I wanted to see what else they had to say.		0	0	-1	none
+39	narrative	1	sentence	I took out another sheet of paper and started writing.		0	0	-1	none
+40	narrative	1	sentence	To [Pen pal]...		0	0	-1	none
+41	narrative	2	sentence	2 years later,		0	0	-1	none
+42	narrative	2	sentence	As middle school started, the letters continued to pile.		0	0	-1	none
+43	narrative	2	EOL			0	0	-1	player
+44	player	2	greeting	To [Pen pal],		0	0	-1	none
+45	player	2	sentence	Ugh, I’m getting swamped with projects left and right.		0	0	-1	none
+46	player	2	sentence	I’ve got an essay due tomorrow and I have to make a powerpoint for history.		0	0	-1	none
+47	player	2	choice	Is there anything that you’re working on right now?		1	0	-1	none
+48	player	2	choice	I’m so tired. I can’t believe we have to do this much work just to get a good grade.		0	0	-1	none
+49	player	2	choice	At this point, I’m ready to copy/paste something from W*kipedia just to get it done.		0	1	-1	none
+50	player	2	EOP			0	0	-1	none
+51	player	2	sentence	But I got on the basketball team recently and that’s been so cool.		0	0	-1	none
+52	player	2	sentence	I’m just a bench warmer for now, but the coach told me that I might end up as a starter in like a month.		0	0	-1	none
+53	player	2	sentence	Man, I can’t wait! I’ll finally have a chance to impress that cute kid in my chem class.		0	0	-1	none
+54	player	2	sentence	Anyways I’ve got an algebra midterm next week and I’m ready to just		0	0	-1	none
+55	player	2	choice	go to study sessions and use my notes to prepare.		1	0	-1	none
+56	player	2	choice	pull an all-nighter and cram the night before.		0	0	-1	none
+57	player	2	choice	cheat to get it over with, I’m pretty sure the one sitting next to me won’t mind.		0	1	-1	none
+58	player	2	EOP			0	0	-1	none
+59	player	2	sentence	My brain’s pretty fried now, can you rec me some more songs, that band last time was pretty neat.		0	0	-1	none
+60	player	2	closing	From, [Pen pal]		0	0	-1	none
