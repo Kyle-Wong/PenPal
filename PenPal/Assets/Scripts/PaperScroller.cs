@@ -19,6 +19,7 @@ public class PaperScroller : MonoBehaviour {
     public float autoScrollingStartY;
     private bool firstScroll = true;
     private float scrollHeight = 0;
+    public Transform closing;
     private void Awake()
     {
         
@@ -81,6 +82,7 @@ public class PaperScroller : MonoBehaviour {
                     firstScroll = false;
                 }
                 transform.position += Vector3.up * scrollHeight;
+                closing.position += Vector3.down * scrollHeight;
             }
             oldHeight = newHeight;
         }

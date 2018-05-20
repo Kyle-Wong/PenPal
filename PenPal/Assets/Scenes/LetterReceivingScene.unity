@@ -1307,6 +1307,7 @@ MonoBehaviour:
   charDelay: 0.02
   allText: 
   charIndex: 0
+  charSound: {fileID: 0}
 --- !u!102 &520721567
 TextMesh:
   serializedVersion: 3
@@ -1567,6 +1568,7 @@ MonoBehaviour:
   charDelay: 0.02
   allText: 
   charIndex: 0
+  charSound: {fileID: 0}
 --- !u!102 &636946227
 TextMesh:
   serializedVersion: 3
@@ -2072,6 +2074,7 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   autoScroll: 0
   autoScrollingStartY: 0
+  closing: {fileID: 636946225}
 --- !u!4 &1209948995
 Transform:
   m_ObjectHideFlags: 0

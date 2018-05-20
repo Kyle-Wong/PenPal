@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EndGameManager : MonoBehaviour {
 	public TextMesh[] fillIns;
+	public GameObject posHolder;
+	public GameObject negHolder;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +19,11 @@ public class EndGameManager : MonoBehaviour {
 	}
 
 	void InitializeBarSummary() {
-		float sum = GameManager.totalPlayerPositiveScore + GameManager.totalPlayerNegativeScore;
-		float normalPos = GameManager.totalPlayerPositiveScore / sum;
-		float normalNeg = 1 - normalPos;
+		//float sum = GameManager.totalPlayerPositiveScore + GameManager.totalPlayerNegativeScore;
+		float sum = 110;
+		float normalPos = 5 / sum;
+		//float normalPos = GameManager.totalPlayerPositiveScore / sum;
+		posHolder.transform.localScale = new Vector3(normalPos, 1, 1);
 	}
 
 	void InitializeFillIns() {

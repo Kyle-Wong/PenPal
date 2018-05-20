@@ -13,8 +13,11 @@ public class SequentialText : MonoBehaviour {
     [HideInInspector]
     public int charIndex = 0;
     private bool isPlaying = false;
+    public AudioClip charSound;
+    private AudioSource source;
     private void Awake()
     {
+        source = GetComponent<AudioSource>();
         textMesh = GetComponent<TextMesh>();
         allText = "";
     }
@@ -50,6 +53,7 @@ public class SequentialText : MonoBehaviour {
                     isPlaying = false;
                     return;
                 }
+                source.PlayOneShot(charSound);
                 textMesh.text = allText.Substring(0, charIndex+1);
                 charIndex++;
             }
