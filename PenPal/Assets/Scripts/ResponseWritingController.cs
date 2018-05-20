@@ -13,7 +13,6 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     public GraphicColorLerp fadeToTransparent;
 
     void Start () {
-		//Debug.Log(GameManager.playerChoiceHistory.ToString());
         letterQueue = GameManager.palQueue;
         currentLE = letterQueue.Dequeue();
 		textWrapper.addAndWrapText(buildLetter());
@@ -74,11 +73,9 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
         {
             currentLE = letterQueue.Dequeue();
 			result.Add(currentLE);
-			Debug.Log("Result list item: "+ currentLE.eventID);
         }
 		foreach(LetterEvent e in result) {
 			foreach (int j in GameManager.playerChoiceHistory) {
-				Debug.Log(e.relatedToID.ToString() + "vs. j:" + j.ToString());
 				if (e.relatedToID == j) {
 					return e.text;
 				}
