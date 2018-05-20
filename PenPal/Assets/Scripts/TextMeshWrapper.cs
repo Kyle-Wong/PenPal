@@ -30,6 +30,7 @@ public class TextMeshWrapper : MonoBehaviour {
     {
         if (words.Length == 0)
             return;
+
         for(var i = 0; i < words.Length; i++)
         {
             int len = textMesh.text.Length;
