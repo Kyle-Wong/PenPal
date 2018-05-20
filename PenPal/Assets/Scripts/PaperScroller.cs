@@ -6,13 +6,16 @@ public class PaperScroller : MonoBehaviour {
 
     // Use this for initialization
     public float scrollSpeed;
-    private LetterWritingController gameController;
+    private ILetterController gameController;
     public float minY;
     public float maxY;
     private float mouseDiff;
     private Camera mainCam;
 	void Start () {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LetterWritingController>();
+        if (gameController == null) { //i assume if this fails, i need to find ResponseWritingController
+                gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResponseWritingController>();
+        }
         mainCam = Camera.main;
 	}
 	

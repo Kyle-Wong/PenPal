@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class LetterWritingController : MonoBehaviour {
+public class LetterWritingController : MonoBehaviour, ILetterController {
 
     // Use this for initialization
     public enum State

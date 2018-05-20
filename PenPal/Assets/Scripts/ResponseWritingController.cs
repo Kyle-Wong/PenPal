@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResponseWritingController : MonoBehaviour {
+public class ResponseWritingController : MonoBehaviour, ILetterController {
     public TextMesh header;
     public TextMeshWrapper textWrapper;
     public TextMesh closing;
@@ -93,5 +93,9 @@ public class ResponseWritingController : MonoBehaviour {
 			}
 		}
         return "BAD CHOICE MADE";
+	}
+	
+	public LetterWritingController.State getState() {
+		return LetterWritingController.State.LetterDone;
 	}
 }
