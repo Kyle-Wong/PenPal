@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class CutSceneManager : MonoBehaviour {
 
 	// Use this for initialization
     public Image background;
-    public Text cutSceneTitle;
+    //public Text cutSceneTitle;
     public Text narrativePrompt;
     public float timer;
-    public int duration;
+    public float duration;
     //string futureNP;
     string NarLength;
     private GraphicColorLerp titleColorLerp;
@@ -21,23 +22,25 @@ public class CutSceneManager : MonoBehaviour {
 	void Start () {
         cutSceneQueue = GameManager.narrativeQueue;
 
-        cutSceneTitle.text = "Next Chapter";
+        //cutSceneTitle.text = "Next Chapter";
         
         narrativePrompt.text = " ";
 
-        NarLength = " ";
+        //NarLength = " ";
         curIndex = cutSceneQueue.Dequeue();
 
         //futureNP = " ";
 
-        while (cutSceneQueue.Count > 0)
-        {
-            NarLength += curIndex.text;
-            curIndex = cutSceneQueue.Dequeue();
-            NarLength += " ";
-        }
+        //while (cutSceneQueue.Count > 0)
+        //{
+        //    NarLength += curIndex.text;
+        //    curIndex = cutSceneQueue.Dequeue();
+        //    NarLength += " ";
+        //}
 
-        titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
+
+
+       // titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
         
         flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();
 
@@ -47,11 +50,12 @@ public class CutSceneManager : MonoBehaviour {
         //flavorColorLerp.duration = 5;       
 
         
-        titleColorLerp.startColorChange();        
+        
+        //titleColorLerp.startColorChange();        
         
         flavorColorLerp.startColorChange();
 
-        flavorColorLerp.initialDelay = 5;
+        //flavorColorLerp.initialDelay = 5;
 
 	}
 	
@@ -60,21 +64,30 @@ public class CutSceneManager : MonoBehaviour {
 
         timer += Time.deltaTime;
 
-
-        if (timer >= 5.0)
+        //every three seconds stop to dequeue
+        if (timer >= duration)
         {
-            cutSceneTitle.text = " ";
+            timer = 0; //reset timer to allow every three duartion
+            //cutSceneTitle.text = " ";
 
             //narrativePrompt.text = "Ready for battle!";
             //cutSceneTitle.text = " ";                  
-            narrativePrompt.text = NarLength;            
+            if (curIndex.type == LetterEvent.Type.SENTENCE)
+            {
+                narrativePrompt.text = curIndex.text;
+                //show current index message
+            }
 
-        }
+            //cutscene is ended at EOL and this scene is ended
+            else if (curIndex.type == LetterEvent.Type.EOL) 
+            {
+                SceneManager.LoadScene("LetterReceivingScene");
+            }
+            //move to next update as next frame occurs
+            curIndex = cutSceneQueue.Dequeue();
 
-        if (timer >= 10.0)
-        {
-            narrativePrompt.text = " ";
-        }
+
+        }       
         
 	}
 }
