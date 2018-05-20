@@ -45,7 +45,7 @@ public class CutSceneManager : MonoBehaviour {
 
         flavorColorLerp2 = narPrompt2.GetComponent<GraphicColorLerp>();
 
-        //flavorColorLerp2.startColorChange();
+        //flavorColorLerp2.startColorChange(); uncomment this to get second text fade in
         flavorColorLerp2.initialDelay = 3;
         flavorColorLerp2.duration = 1;
 
@@ -58,6 +58,7 @@ public class CutSceneManager : MonoBehaviour {
 
 	}
 
+    //comment this coroutine to get second text fade in
     IEnumerator Example()
     {
         flavorColorLerp.startColorChange();
