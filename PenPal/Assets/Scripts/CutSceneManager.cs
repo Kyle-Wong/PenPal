@@ -27,36 +27,14 @@ public class CutSceneManager : MonoBehaviour {
         narrativePrompt.text = " ";
 
         //NarLength = " ";
-        curIndex = cutSceneQueue.Dequeue();
-
-        //futureNP = " ";
-
-        //while (cutSceneQueue.Count > 0)
-        //{
-        //    NarLength += curIndex.text;
-        //    curIndex = cutSceneQueue.Dequeue();
-        //    NarLength += " ";
-        //}
-
-
-
-       // titleColorLerp = cutSceneTitle.GetComponent<GraphicColorLerp>();
+        if (cutSceneQueue.Count > 0)
+            curIndex = cutSceneQueue.Dequeue();
+        narrativePrompt.text = curIndex.text;
         
-        flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();
-
-        //titleColorLerp.duration = 5; //set the next chapter duration to five
-
-        
-        //flavorColorLerp.duration = 5;       
-
-        
-        
-        //titleColorLerp.startColorChange();        
+        flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();         
         
         flavorColorLerp.startColorChange();
-
-        //flavorColorLerp.initialDelay = 5;
-
+        
 	}
 	
 	// Update is called once per frame
@@ -65,7 +43,9 @@ public class CutSceneManager : MonoBehaviour {
         timer += Time.deltaTime;
 
         //every three seconds stop to dequeue
-        if (timer >= duration)
+        
+        if (timer >= duration || Input.GetButtonDown("Submit"))
+        //use multiple buttons to skip text or wait three seconds
         {
             timer = 0; //reset timer to allow every three duartion
             //cutSceneTitle.text = " ";
