@@ -35,6 +35,10 @@ public class PaperScroller : MonoBehaviour {
         {
             newHeight = textMesh.GetComponent<Renderer>().bounds.extents.y;
             oldHeight = newHeight;
+        } else
+        {
+            if(textMesh != null)
+                closing.position = new Vector3(closing.position.x,closing.position.y+(textMesh.GetComponent<Renderer>().bounds.extents.y-textMesh.transform.position.y),closing.position.z);
         }
 
 	}
@@ -85,6 +89,11 @@ public class PaperScroller : MonoBehaviour {
                 closing.position += Vector3.down * scrollHeight;
             }
             oldHeight = newHeight;
+        }
+        else
+        {
+            if (textMesh != null)
+                closing.position = new Vector3(closing.position.x, textMesh.transform.position.y-textMesh.GetComponent<Renderer>().bounds.extents.y*1.8f-1.5f, closing.position.z);
         }
     }
     

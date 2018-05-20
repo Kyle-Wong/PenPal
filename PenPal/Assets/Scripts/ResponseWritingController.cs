@@ -57,7 +57,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
                     result += resolveChoice().Replace("[player]", GameManager.playerName);
                     break;
                 case LetterEvent.Type.EOP:
-                    result += "\n";
+                    result += "\n\n ";
                     break;
                 case LetterEvent.Type.EOL:
                 default:
