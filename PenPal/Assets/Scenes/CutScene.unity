@@ -163,7 +163,7 @@ Prefab:
     - target: {fileID: 224822529430238342, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.80000305
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224822529430238342, guid: e71d0a7c8eb378e41939aef484fa3bb5,
         type: 2}
@@ -217,6 +217,31 @@ Prefab:
     - target: {fileID: 1715128067847188, guid: e71d0a7c8eb378e41939aef484fa3bb5, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: startColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: startColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: startColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: startColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: initialDelay
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e71d0a7c8eb378e41939aef484fa3bb5, type: 2}
@@ -772,6 +797,7 @@ MonoBehaviour:
   narPrompt2: {fileID: 224070294}
   timer: 1
   duration: 3
+  switchPrompt: 0
 --- !u!4 &1199805500
 Transform:
   m_ObjectHideFlags: 0
@@ -1181,6 +1207,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150481883102720, guid: e71d0a7c8eb378e41939aef484fa3bb5,
+        type: 2}
+      propertyPath: endColor.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e71d0a7c8eb378e41939aef484fa3bb5, type: 2}
