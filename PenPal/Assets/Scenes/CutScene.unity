@@ -1100,7 +1100,14 @@ Prefab:
       propertyPath: m_EffectColor.a
       value: 0.73333335
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114871063981481992, guid: dcfeeb99b66bc44448eb4935a07ef386,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4ab58434a4d77a74a9427450cfd442f4,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 114662109296042848, guid: dcfeeb99b66bc44448eb4935a07ef386, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dcfeeb99b66bc44448eb4935a07ef386, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1826385540 stripped
@@ -1131,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOn: 2
-  startColor: {r: 0.9121844, g: 0.9528302, b: 0.8944019, a: 0}
+  startColor: {r: 1, g: 1, b: 1, a: 0}
   endColor: {r: 1, g: 1, b: 1, a: 1}
   duration: 1
   initialDelay: 0
