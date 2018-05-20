@@ -435,6 +435,9 @@ MonoBehaviour:
   scrollSpeed: 50
   minY: -1.28
   maxY: 18.5
+  textMesh: {fileID: 927419613}
+  autoScroll: 1
+  autoScrollingStartY: 0
 --- !u!1 &85027890
 GameObject:
   m_ObjectHideFlags: 0
