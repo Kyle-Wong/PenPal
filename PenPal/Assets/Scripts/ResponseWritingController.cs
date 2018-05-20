@@ -13,6 +13,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     public GraphicColorLerp fadeToTransparent;
 
     void Start () {
+		Debug.Log(GameManager.playerChoiceHistory);
         letterQueue = GameManager.palQueue;
         currentLE = letterQueue.Dequeue();
 		textWrapper.addAndWrapText(buildLetter());
@@ -102,6 +103,8 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 			nextScene = "LetterWritingScene";
 		else if (currentLE.goToNext == LetterEvent.Speaker.MADLIBS) 
 			nextScene = "MadLibsScene";
+		else if (currentLE.goToNext == LetterEvent.Speaker.NARRATIVE)
+			nextScene = "CutScene";
 		StartCoroutine(loadAfterDelay(nextScene,fadeToBlack.duration));
 	}
 

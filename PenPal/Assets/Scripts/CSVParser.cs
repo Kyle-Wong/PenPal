@@ -6,9 +6,16 @@ using UnityEngine;
 using System.IO;
 using System;
 public class CSVParser : MonoBehaviour {
+	public static CSVParser instance;
 	// Use this for initialization
 	void Awake () {
-		ReadCSV();		
+		if (!instance) {
+			instance = this;
+			DontDestroyOnLoad(this);
+			ReadCSV();	
+		} else {
+			GameObject.Destroy(this.gameObject);
+		}	
 	}
 	private void ReadCSV() {
 		StreamReader file = new System.IO.StreamReader("Assets/Resources/Narrative/script.tsv");	

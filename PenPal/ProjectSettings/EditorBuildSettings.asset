@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: 296eba071c434114e9148ea740fa8344
+  - enabled: 1
+    path: Assets/Scenes/MadLibsScene.unity
+    guid: 74e258180cb8e574bb8ac7179cfe3b0e
   m_configObjects: {}
