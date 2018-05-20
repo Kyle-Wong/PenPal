@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ResponseWritingController : MonoBehaviour, ILetterController {
     public TextMesh header;
@@ -11,7 +12,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     LetterEvent currentLE;
 	public GraphicColorLerp fadeToBlack;
     public GraphicColorLerp fadeToTransparent;
-
+    public Button continueButton;
     void Start () {
         letterQueue = GameManager.palQueue;
         currentLE = letterQueue.Dequeue();
@@ -108,6 +109,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
   	public IEnumerator loadAfterDelay(string sceneName, float delay)
     {
         fadeToBlack.startColorChange();
+        continueButton.interactable = false;
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
