@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charDelay: 0
+  allText: 
+  charIndex: 0
 --- !u!114 &153442211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1036693507323630, guid: dcfeeb99b66bc44448eb4935a07ef386, type: 2}
       propertyPath: m_Name
-      value: FlavortText
+      value: NarrativeText
       objectReference: {fileID: 0}
     - target: {fileID: 114871063981481992, guid: dcfeeb99b66bc44448eb4935a07ef386,
         type: 2}
@@ -1087,7 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 2008973864}
   cutSceneTitle: {fileID: 2038132508}
-  flavorText: {fileID: 1132829581}
+  narrativePrompt: {fileID: 1132829581}
   timer: 0
   duration: 0
 --- !u!4 &1733297366
