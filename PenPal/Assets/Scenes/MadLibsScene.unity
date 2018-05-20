@@ -1267,7 +1267,7 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   autoScroll: 0
   autoScrollingStartY: 0
-  closing: {fileID: 0}
+  closing: {fileID: 1560758397}
 --- !u!1 &627808117
 GameObject:
   m_ObjectHideFlags: 0
