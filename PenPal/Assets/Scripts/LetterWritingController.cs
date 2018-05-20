@@ -179,6 +179,10 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             waitingForInput = false;
             bodyRevealer.setPlaying(true);
             bodyRevealer.addText(" " + chosenLE.text);
+            for(int i = 0; i < buttonList.Length; i++)
+            {
+                buttonList[i].text = "";
+            }
             GameManager.playerPositiveScore += chosenLE.positive;
             GameManager.playerNegativeScore += chosenLE.negative;
             GameManager.playerChoiceHistory.Add(chosenLE.eventID);
