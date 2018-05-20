@@ -47,14 +47,14 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 					header.text = buildHeader();
 					break;
                 case LetterEvent.Type.SENTENCE:
-                    result += currentLE.text;
+                    result += currentLE.text.Replace("[player]", GameManager.playerName);
                     break;
 				case LetterEvent.Type.CLOSING:
 					result += checkForMadLibs();
 					closing.text = buildClosing();
 					break;
                 case LetterEvent.Type.CHOICE:
-                    result += resolveChoice();
+                    result += resolveChoice().Replace("[player]", GameManager.playerName);
                     break;
                 case LetterEvent.Type.EOP:
                     result += "\n";
@@ -89,7 +89,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 	private string checkForMadLibs() {
 		string ret = "";
 		if (GameManager.madLibsResults.Count > 0) {
-			ret += "\nP.S. Here's the madlibs results:\n";
+			ret += "\n\nP.S. Here's the madlibs results:\n";
 			ret += GameManager.madLibsResults.Dequeue();
 		}
 		return ret;

@@ -141,7 +141,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
         string result = "";
         while(letterQueue.Count > 0 && currentLE.type == LetterEvent.Type.CLOSING)
         {
-            result += currentLE.text;
+            result += currentLE.text.Replace("[player]", GameManager.playerName);
             currentLE = letterQueue.Dequeue();
         }
         return result;
@@ -157,7 +157,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             switch (currentLE.type)
             {
                 case LetterEvent.Type.SENTENCE:
-                    result += " " + currentLE.text;
+                    result += " " + currentLE.text.Replace("[player]", GameManager.playerName);
                     break;
                 case LetterEvent.Type.CHOICE:
                     breakLoop = true;
