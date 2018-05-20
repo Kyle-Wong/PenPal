@@ -1427,43 +1427,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 446874912}
-  m_Text: 'a
-
-    a
-
-    a
-
-    a
-
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-    a
-
-
-    a
-
-    a
-
-    a'
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.0905
   m_LineSpacing: 1
@@ -1565,7 +1529,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520721564}
-  m_Text: asdf
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.092
   m_LineSpacing: 1
