@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene.unity
     guid: 86a05470c04ae81428c35dadd7a5c995
+  - enabled: 1
+    path: Assets/Scenes/LetterReceivingScene.unity
+    guid: 97b9b585792ea8b498859cd020793b9e
   m_configObjects: {}
