@@ -645,6 +645,7 @@ MonoBehaviour:
   header: {fileID: 66305652}
   body: {fileID: 927419613}
   closing: {fileID: 191352916}
+  cutScene: CutScene
 --- !u!4 &263365802
 Transform:
   m_ObjectHideFlags: 0
