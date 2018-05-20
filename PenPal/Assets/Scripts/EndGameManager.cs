@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndGameManager : MonoBehaviour {
 	public TextMesh[] fillIns;
 	public GameObject posHolder;
 	public GameObject negHolder;
+	public Button continueButton;
+	public GraphicColorLerp fadeToBlack;
+
 
 	// Use this for initialization
 	void Start () {
@@ -103,5 +108,15 @@ public class EndGameManager : MonoBehaviour {
 			default:
 				return "";
 		}
+	}
+	public void pressContinueForPostgame() {
+		StartCoroutine(loadAfterDelay("PostGameScene",fadeToBlack.duration));
+	}
+
+	private IEnumerator loadAfterDelay(string nextScene, float delay) {
+		fadeToBlack.startColorChange();
+        continueButton.interactable = false;
+        yield return new WaitForSeconds(delay);
+		SceneManager.LoadScene(nextScene);
 	}
 }

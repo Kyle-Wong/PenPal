@@ -9,6 +9,7 @@ public class LetterEvent {
 		PAL,
 		NARRATIVE,
 		MADLIBS,
+		END,
 		NONE
 	}
 	public enum Type {

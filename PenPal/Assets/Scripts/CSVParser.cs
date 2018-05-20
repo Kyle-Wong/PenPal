@@ -118,6 +118,8 @@ public class CSVParser : MonoBehaviour {
 			return LetterEvent.Speaker.PAL;
 		} else if (type.Equals("madlibs")) {
 			return LetterEvent.Speaker.MADLIBS;
+		} else if (type.Equals("end")) {
+			return LetterEvent.Speaker.END;
 		} else {
 			return LetterEvent.Speaker.NONE;
 		}

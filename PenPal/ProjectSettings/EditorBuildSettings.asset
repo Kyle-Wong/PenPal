@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MadLibsScene.unity
     guid: 74e258180cb8e574bb8ac7179cfe3b0e
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene.unity
+    guid: d60ec2ed3022adc44a22a901c6b460ce
   m_configObjects: {}

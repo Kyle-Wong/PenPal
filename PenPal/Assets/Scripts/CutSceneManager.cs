@@ -140,6 +140,9 @@ public class CutSceneManager : MonoBehaviour {
             case LetterEvent.Speaker.MADLIBS:
                 SceneManager.LoadScene("MadLibsScene");
                 break;
+            case LetterEvent.Speaker.END:
+                SceneManager.LoadScene("EndGameScene");
+                break;
         }
     }
     private IEnumerator textLoop(Text textObject, GraphicColorLerp colorLerp, float initialDelay, float[] timers, int index)

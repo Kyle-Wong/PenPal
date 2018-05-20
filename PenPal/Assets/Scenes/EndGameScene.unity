@@ -1423,6 +1423,7 @@ MonoBehaviour:
   charDelay: 0.02
   allText: 
   charIndex: 0
+  charSound: {fileID: 0}
 --- !u!102 &661117628
 TextMesh:
   serializedVersion: 3
@@ -2562,6 +2563,7 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   autoScroll: 0
   autoScrollingStartY: 0
+  closing: {fileID: 0}
 --- !u!1 &1300689949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,6 +2609,7 @@ MonoBehaviour:
   charDelay: 0.02
   allText: 
   charIndex: 0
+  charSound: {fileID: 0}
 --- !u!102 &1300689952
 TextMesh:
   serializedVersion: 3
@@ -3977,6 +3980,8 @@ MonoBehaviour:
   - {fileID: 1688053958}
   posHolder: {fileID: 1397970483}
   negHolder: {fileID: 1998314239}
+  continueButton: {fileID: 1079074887}
+  fadeToBlack: {fileID: 754938860}
 --- !u!4 &2000729948
 Transform:
   m_ObjectHideFlags: 0
