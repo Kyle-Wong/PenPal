@@ -92,8 +92,8 @@ public class PaperScroller : MonoBehaviour {
         }
         else
         {
-            if (textMesh != null)
-                closing.position = new Vector3(closing.position.x, textMesh.transform.position.y-textMesh.GetComponent<Renderer>().bounds.extents.y*1.8f-1.5f, closing.position.z);
+            //if (textMesh != null)
+                //closing.position = new Vector3(closing.position.x, textMesh.transform.position.y-textMesh.GetComponent<Renderer>().bounds.extents.y*2.5f-.8f, closing.position.z);
         }
     }
     
