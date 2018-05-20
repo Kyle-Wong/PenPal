@@ -49,11 +49,11 @@ public class PaperScroller : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
+                transform.position -= Vector3.up * scrollSpeed * Time.deltaTime;
                 
             } else if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                transform.position -= Vector3.up * scrollSpeed * Time.deltaTime;
+                transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
                 
             } else if (Input.GetMouseButton(0))
             {

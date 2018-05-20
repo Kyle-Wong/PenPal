@@ -40,7 +40,7 @@ public class SequentialText : MonoBehaviour {
                 while (allText[charIndex] == '\n' || allText[charIndex] == ' ')
                 {
                     
-                    //textMesh.text += allText[charIndex];
+                    textMesh.text += allText[charIndex];
                     charIndex++;
                     if (charIndex >= allText.Length)
                     {

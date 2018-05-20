@@ -157,7 +157,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
             switch (currentLE.type)
             {
                 case LetterEvent.Type.SENTENCE:
-                    result += currentLE.text;
+                    result += " " + currentLE.text;
                     break;
                 case LetterEvent.Type.CHOICE:
                     breakLoop = true;
