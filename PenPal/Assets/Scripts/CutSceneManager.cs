@@ -103,7 +103,19 @@ public class CutSceneManager : MonoBehaviour {
             //cutscene is ended at EOL and this scene is ended
             else if (curIndex.type == LetterEvent.Type.EOL) 
             {
-                SceneManager.LoadScene("LetterReceivingScene");
+                switch (curIndex.goToNext)
+                {
+                    case LetterEvent.Speaker.PLAYER:
+                        SceneManager.LoadScene("LetterWritingScene");
+                        break;
+                    case LetterEvent.Speaker.PAL:
+                        SceneManager.LoadScene("LetterReceivingScene");
+                        break;
+                    case LetterEvent.Speaker.MADLIBS:
+                        SceneManager.LoadScene("MadLibsScene");
+                        break;
+                }
+
             }
             //move to next update as next frame occurs
             curIndex = cutSceneQueue.Dequeue();
