@@ -13,9 +13,10 @@ public class PaperScroller : MonoBehaviour {
     private Camera mainCam;
 	void Start () {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LetterWritingController>();
-        if (gameController == null) { //i assume if this fails, i need to find ResponseWritingController
+        if (gameController == null) //i assume if this fails, i need to find ResponseWritingController
                 gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResponseWritingController>();
-        }
+        if (gameController == null)
+                gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<MadlibsController>();
         mainCam = Camera.main;
 	}
 	
