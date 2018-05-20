@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 50
+  m_CharacterLimit: 12
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1987,6 +1987,7 @@ MonoBehaviour:
   mainMenuButtons: {fileID: 1450698044}
   inputCanvas: {fileID: 1635957554}
   nameBox: {fileID: 889329956}
+  playButton: {fileID: 1643897409}
 --- !u!4 &1896291046
 Transform:
   m_ObjectHideFlags: 0
