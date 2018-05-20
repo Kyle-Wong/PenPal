@@ -17,6 +17,7 @@ public class PostGameManager : MonoBehaviour {
     public Text prompt2;
     private GraphicColorLerp colorLerp1;
     private GraphicColorLerp colorLerp2;
+	public GraphicColorLerp colorLerpBG;
 	void Start () {
         cutSceneQueue = new List<string>(){"I got a letter in the mail today.", "I recognized the handwriting."};
         colorLerp1 = prompt1.gameObject.GetComponent<GraphicColorLerp>();
@@ -28,7 +29,9 @@ public class PostGameManager : MonoBehaviour {
 		colorLerp2.initialDelay = 4f;
 		StartCoroutine(textLoop(colorLerp1));
 		StartCoroutine(textLoop(colorLerp2));
-		StartCoroutine(endGame(10f));
+		StartCoroutine(textLoop(colorLerpBG));
+		StartCoroutine(hideBothTexts(6f));
+		StartCoroutine(endGame(15f));
 	}
 
 	// Update is called once per frame
@@ -77,11 +80,24 @@ public class PostGameManager : MonoBehaviour {
         }       
         */
 	}
+
+	private IEnumerator hideBothTexts(float delay) {
+		yield return new WaitForSeconds(delay);
+		Color start = colorLerp1.startColor;
+		Color finish = colorLerp1.endColor;
+		colorLerp1.startColor = finish;
+		colorLerp1.endColor = start;
+		colorLerp2.startColor = finish;
+		colorLerp2.endColor = start;
+		colorLerp1.startColorChange();
+		colorLerp2.startColorChange();
+	}
     private IEnumerator textLoop(GraphicColorLerp colorLerp)
     {
         colorLerp.startColorChange();
 		yield return null;
     }
+
 	private IEnumerator endGame(float delay) {
 		yield return new WaitForSeconds(delay);
 		SceneManager.LoadScene("CreditsScene");

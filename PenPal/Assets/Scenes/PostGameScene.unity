@@ -951,6 +951,7 @@ GameObject:
   - component: {fileID: 1578475637}
   - component: {fileID: 1578475638}
   - component: {fileID: 1578475636}
+  - component: {fileID: 1578475639}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1020,6 +1021,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &1578475639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1578475634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fe1246d9cd7be41a5a51f085d64dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOn: 2
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  endColor: {r: 1, g: 1, b: 1, a: 1}
+  duration: 4
+  initialDelay: 6
 --- !u!1 &1599229746
 GameObject:
   m_ObjectHideFlags: 0

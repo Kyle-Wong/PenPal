@@ -12,6 +12,7 @@ public class EndGameManager : MonoBehaviour {
 	public GraphicColorLerp fadeToBlack;
 
 
+
 	// Use this for initialization
 	void Start () {
 		InitializeFillIns();
