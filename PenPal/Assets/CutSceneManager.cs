@@ -37,12 +37,11 @@ public class CutSceneManager : MonoBehaviour {
        
        
         timer += Time.deltaTime;
-        while (curIndex.type.text != "EOL")
+        while (curIndex.type != LetterEvent.Type.EOL)
             if (timer >= duration)
             {
                 //cutSceneTitle.text = " ";                  
                 flavorText.text = curIndex.text;
             }
-
 	}
 }
