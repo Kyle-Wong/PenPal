@@ -226,7 +226,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Steven
+  m_Text: Steven Kha
 --- !u!222 &178820567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 503041510}
   - component: {fileID: 503041509}
   m_Layer: 5
-  m_Name: Name0
+  m_Name: Role0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -640,7 +640,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 715224585}
   - component: {fileID: 715224584}
   m_Layer: 5
-  m_Name: Name3
+  m_Name: Role3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -807,7 +807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Programmer/Writer
+  m_Text: Writer
 --- !u!222 &715224586
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 983666315}
   - component: {fileID: 983666314}
   m_Layer: 5
-  m_Name: Name2
+  m_Name: Role2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -888,7 +888,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1062,7 +1062,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1074,7 +1074,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trisa
+  m_Text: Trisa Alvarez
 --- !u!222 &1011583264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1223,7 +1223,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1235,7 +1235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tara
+  m_Text: Tara Ngyuen
 --- !u!222 &1066428979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 1566970910}
   - component: {fileID: 1566970909}
   m_Layer: 5
-  m_Name: Name4
+  m_Name: Role4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1639,7 +1639,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1670,7 +1670,7 @@ GameObject:
   - component: {fileID: 1884346689}
   - component: {fileID: 1884346688}
   m_Layer: 5
-  m_Name: Name1
+  m_Name: Role1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1732,7 +1732,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 1931944844}
   - component: {fileID: 1931944843}
   m_Layer: 5
-  m_Name: Name5
+  m_Name: Role5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1825,7 +1825,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1854,6 +1854,7 @@ GameObject:
   - component: {fileID: 2059224488}
   - component: {fileID: 2059224490}
   - component: {fileID: 2059224489}
+  - component: {fileID: 2059224491}
   m_Layer: 5
   m_Name: CreditsTitle
   m_TagString: Untagged
@@ -1899,7 +1900,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: aaab85f187668d842b1bf75002b74236, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1918,6 +1919,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2059224487}
+--- !u!114 &2059224491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2059224487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2085037201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +2007,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3c5e53800f7373b4587759d4e3114a8e, type: 3}
+    m_Font: {fileID: 12800000, guid: d629bf1a4cea2ef479a680042674404c, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -2004,7 +2019,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kristi
+  m_Text: Kristi Chang
 --- !u!222 &2085037205
 CanvasRenderer:
   m_ObjectHideFlags: 0
