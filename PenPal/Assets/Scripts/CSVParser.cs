@@ -21,8 +21,18 @@ public class CSVParser : MonoBehaviour {
 		}
 		//maybe run a unit test on sizes of queue vs. sizes expected lol
 		Debug.Log("Loaded all queues.");
+		//Now, we'll load the madlibs...
+		file = new System.IO.StreamReader("Assets/Resources/Narrative/madlibs.tsv");	
+		file.ReadLine(); //eat the header 
+		for (int i = 2; (buf= file.ReadLine()) != null; ++i) {
+			string[] entry = buf.Trim().Split('\t');
+			Debug.Log("Loading madlibs at tsv line " + i.ToString());
+			CreateMadlibsEvent(entry, i);
+		}
+		//maybe run a unit test on sizes of queue vs. sizes expected lol
+		Debug.Log("Loaded all madlibs.");
 	}
-	
+
 	private void CreateLetterEvent(string[] entry, int i) {
 		LetterEvent e = new LetterEvent();
 		e.eventID = Convert.ToInt32(entry[0]);
@@ -86,5 +96,13 @@ public class CSVParser : MonoBehaviour {
 			Debug.Log("Error: could not resolve type for entry " + i.ToString());
 			return LetterEvent.Type.ERROR;
 		}
+	}
+
+	private void CreateMadlibsEvent(string[] entry, int i) {
+		MadlibsEvent e = new MadlibsEvent();
+		e.groupID = Convert.ToInt32(entry[0]);
+		e.text = entry[1];
+		e.prompt = entry[2];
+		GameManager.madLibsQueue.Enqueue(e);
 	}
 }

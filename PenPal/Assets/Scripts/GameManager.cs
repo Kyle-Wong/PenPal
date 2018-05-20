@@ -10,4 +10,6 @@ public static class GameManager {
 	public static Queue<LetterEvent> playerQueue = new Queue<LetterEvent>();
 	public static Queue<LetterEvent> narrativeQueue = new Queue<LetterEvent>();
 	public static Queue<LetterEvent> palQueue = new Queue<LetterEvent>();
+	public static Queue<MadlibsEvent> madLibsQueue = new Queue<MadlibsEvent>();
+	public static Queue<string> madLibsResults = new Queue<string>();
 }
