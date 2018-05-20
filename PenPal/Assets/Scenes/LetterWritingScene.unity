@@ -1617,6 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 692011091}
   - component: {fileID: 692011092}
+  - component: {fileID: 692011093}
   m_Layer: 0
   m_Name: Wood Texture
   m_TagString: Untagged
@@ -1682,6 +1683,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &692011093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 692011090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a06124b467037409e5bac90de00b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woods:
+  - {fileID: 21300000, guid: 114bb38409f5144409d102d3bac6a714, type: 3}
+  - {fileID: 21300000, guid: d147904eb80d99c4ab03ef18a9df2041, type: 3}
+  - {fileID: 21300000, guid: b40a558812c804a47b38a229604d58f6, type: 3}
+  - {fileID: 21300000, guid: af6a57b0063fc7e42bb438f7895b55f2, type: 3}
+  - {fileID: 21300000, guid: 624d71fbb31005f43823ffecba66b2e2, type: 3}
+  - {fileID: 21300000, guid: 8b0ce67c13051a34482d9a6267e8b9b5, type: 3}
+  - {fileID: 21300000, guid: 09012a6ea8a811549a34a58092435657, type: 3}
+  - {fileID: 21300000, guid: f80150baf5989ed43a7ff4d3aa255c2c, type: 3}
+  - {fileID: 21300000, guid: a190e0486d408644cb0298cbe4c240ca, type: 3}
+  - {fileID: 21300000, guid: 114bb38409f5144409d102d3bac6a714, type: 3}
 --- !u!1 &899995120
 GameObject:
   m_ObjectHideFlags: 0

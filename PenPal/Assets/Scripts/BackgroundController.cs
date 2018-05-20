@@ -6,12 +6,11 @@ using UnityEngine.UI;
 public class BackgroundController : MonoBehaviour {
 
     // Use this for initialization
-    private SpriteRenderer myImage;
     public Sprite[] woods;
     private int group;
 	void Start () {
         group = GameManager.playerQueue.Peek().group;
-        myImage.sprite = woods[group];
+        GetComponent<SpriteRenderer>().sprite = woods[(group - 1) % woods.Length];
 	}
 	
 	// Update is called once per frame
