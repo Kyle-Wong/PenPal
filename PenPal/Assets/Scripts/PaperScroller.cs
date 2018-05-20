@@ -21,11 +21,7 @@ public class PaperScroller : MonoBehaviour {
     private float scrollHeight = 0;
     private void Awake()
     {
-        LetterEvent LE = new LetterEvent();
-        LE.type = LetterEvent.Type.SENTENCE;
-        LE.text = " a asd fsd asdf dfsa das fsdadfas fad afsd f ad fad asfd fasd asfd fasd asfdf sd" +
-            "\n fasd sdfa asdf fsd fsda asdf fsda fd sdf fsd fsd fa adsf asdfafsd ";
-        GameManager.playerQueue.Enqueue(LE);
+        
     }
     void Start () {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<LetterWritingController>();
