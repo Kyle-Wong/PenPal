@@ -208,6 +208,7 @@ public class LetterWritingController : MonoBehaviour, ILetterController {
     public void goToCutscene()
     {
         GameManager.playerQueue = letterQueue;
+        GameManager.storeScores();
         StartCoroutine(loadAfterDelay(cutScene,fadeToBlack.duration));
     }
     public IEnumerator loadAfterDelay(string sceneName, float delay)

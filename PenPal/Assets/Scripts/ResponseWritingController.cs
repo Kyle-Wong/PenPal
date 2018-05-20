@@ -88,7 +88,7 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
 	private string checkForMadLibs() {
 		string ret = "";
 		if (GameManager.madLibsResults.Count > 0) {
-			ret += "P.S. Here's the madlibs results:\n";
+			ret += "\nP.S. Here's the madlibs results:\n";
 			ret += GameManager.madLibsResults.Dequeue();
 		}
 		return ret;
