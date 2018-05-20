@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResponseWritingController : MonoBehaviour, ILetterController {
     public TextMesh header;
@@ -8,6 +9,8 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
     public TextMesh closing;
     Queue<LetterEvent> letterQueue;
     LetterEvent currentLE;
+	public GraphicColorLerp fadeToBlack;
+    public GraphicColorLerp fadeToTransparent;
 
     void Start () {
         letterQueue = GameManager.palQueue;
@@ -83,8 +86,6 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
             result.Add(currentLE);
             currentLE = letterQueue.Dequeue();
         }
-		//TODO: REMOVE HARDCODED 8 WHEN PLAYER IS MAKING CHOICES
-		GameManager.playerChoiceHistory.Add(8);
 		foreach(LetterEvent e in result) {
 			foreach (int j in GameManager.playerChoiceHistory) {
 				if (e.relatedToID == j) {
@@ -95,6 +96,21 @@ public class ResponseWritingController : MonoBehaviour, ILetterController {
         return "BAD CHOICE MADE";
 	}
 	
+	public void pressContinueButton() {
+		string nextScene = "";
+		if (currentLE.goToNext == LetterEvent.Speaker.PLAYER) 
+			nextScene = "LetterWritingScene";
+		else if (currentLE.goToNext == LetterEvent.Speaker.MADLIBS) 
+			nextScene = "MadLibsScene";
+		StartCoroutine(loadAfterDelay(nextScene,fadeToBlack.duration));
+	}
+
+  	public IEnumerator loadAfterDelay(string sceneName, float delay)
+    {
+        fadeToBlack.startColorChange();
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+    }
 	public LetterWritingController.State getState() {
 		return LetterWritingController.State.LetterDone;
 	}
