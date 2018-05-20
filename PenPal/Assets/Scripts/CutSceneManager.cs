@@ -13,11 +13,10 @@ public class CutSceneManager : MonoBehaviour {
     public Text narPrompt2;
     public float timer;
     public float duration;
-    public int switchPrompt;
-    //string futureNP;
-    string NarLength;
-    private GraphicColorLerp titleColorLerp;
+    public int switchPrompt;      
+    
     private GraphicColorLerp flavorColorLerp;
+    private GraphicColorLerp flavorColorLerp2;
     Queue<LetterEvent> cutSceneQueue;
     LetterEvent curIndex;
     
@@ -33,14 +32,40 @@ public class CutSceneManager : MonoBehaviour {
 
         //NarLength = " ";
         if (cutSceneQueue.Count > 0)
+        {
             curIndex = cutSceneQueue.Dequeue();
+        }
+
         narrativePrompt.text = curIndex.text;
         
         flavorColorLerp = narrativePrompt.GetComponent<GraphicColorLerp>();         
         
-        flavorColorLerp.startColorChange();
-        
+        //flavorColorLerp.startColorChange();
+        flavorColorLerp.duration = 1;
+
+        flavorColorLerp2 = narPrompt2.GetComponent<GraphicColorLerp>();
+
+        //flavorColorLerp2.startColorChange(); uncomment this to get second text fade in
+        flavorColorLerp2.initialDelay = 3;
+        flavorColorLerp2.duration = 1;
+
+        if (cutSceneQueue.Count > 0)
+        {
+            curIndex = cutSceneQueue.Dequeue();
+        }
+
+        StartCoroutine(Example());
+
 	}
+
+    //comment this coroutine to get second text fade in
+    IEnumerator Example()
+    {
+        flavorColorLerp.startColorChange();
+        yield return new WaitForSeconds(3);
+        flavorColorLerp2.startColorChange();
+        yield return new WaitForSeconds(3);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -59,9 +84,19 @@ public class CutSceneManager : MonoBehaviour {
             //cutSceneTitle.text = " ";                  
             if (curIndex.type == LetterEvent.Type.SENTENCE)
             {
-                //.text = curIndex.text;
-                
-                narPrompt2.text = curIndex.text;
+                //alternate font object for fade in with even and odd
+                if (switchPrompt % 2 != 0) //when index is odd
+                {
+                    narrativePrompt.text = " ";
+                    narPrompt2.text = curIndex.text;                    
+                    switchPrompt++;                    
+                }
+                else //index is even
+                {
+                    narPrompt2.text = " ";
+                    narrativePrompt.text = curIndex.text;                    
+                    switchPrompt++;
+                }
                 //show current index message
             }
 
