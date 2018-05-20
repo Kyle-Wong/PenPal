@@ -19,7 +19,7 @@ public class GameMusicScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int groupIndex = GameManager.playerQueue.Peek().group;
-		if(currentGroup != groupIndex){
+		if(currentGroup != groupIndex && currentGroup <= 8 && currentGroup >= 1){
             music.Stop();
             music.clip = sounds[groupIndex-1];
             music.Play();

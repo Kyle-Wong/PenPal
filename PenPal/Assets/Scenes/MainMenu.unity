@@ -449,6 +449,32 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!1 &135533245 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1899141934724546, guid: 4b82a335966b04942b2917d144b5f2c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1279572023}
+--- !u!114 &135533246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135533245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa06d430997db90499a92f641283248e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 1db5f1955c6af9c44903b0ef00a11be2, type: 3}
+  - {fileID: 8300000, guid: d49183478ef59b3499092d8a903c7636, type: 3}
+  - {fileID: 8300000, guid: d49183478ef59b3499092d8a903c7636, type: 3}
+  - {fileID: 8300000, guid: 5d1f5b198f02e68469302a8b9aaa2cbd, type: 3}
+  - {fileID: 8300000, guid: 5d1f5b198f02e68469302a8b9aaa2cbd, type: 3}
+  - {fileID: 8300000, guid: d49183478ef59b3499092d8a903c7636, type: 3}
+  - {fileID: 8300000, guid: a485b96aaa409fd4cb8bc54bd8d27247, type: 3}
+  - {fileID: 8300000, guid: ecd76a829e17b6342866ded16de39d10, type: 3}
+  music: {fileID: 0}
 --- !u!1 &191399968
 GameObject:
   m_ObjectHideFlags: 0
