@@ -1,0 +1,395 @@
+ID	SPEAKER	GROUP	TYPE	TEXT 	PROMPT	POS	NEG	RELATED TO ID	GOTO
+1	narrative	1	sentence	Our class has been given a pen pal assignment. 		0	0	-1	none
+2	narrative	1	sentence	The teacher is making us write a letter and send it out. 		0	0	-1	none
+3	narrative	1	sentence	I hope that my pen pal is at least cool? 		0	0	-1	none
+4	narrative	1	EOL			0	0	-1	player
+5	player	1	greeting	To my Assigned Pen Pal, 		0	0	-1	none
+6	player	1	sentence	I'm [player]. 		0	0	-1	none
+7	player	1	sentence	My teacher is making me write this letter. She’s very mean. 		0	0	-1	none
+8	player	1	sentence	I don't like that she makes us do hard math problems. 		0	0	-1	none
+9	player	1	EOP			0	0	-1	none
+10	player	1	choice	How about you? Do you hate math too? 		1	0	-1	none
+11	player	1	choice	Math is my worst subject. I’m really bad at numbers. 		0	0	-1	none
+12	player	1	choice	I really don’t want to write this letter either. It’s such a dumb thing to do. 		0	1	-1	none
+13	player	1	EOP			0	0	-1	none
+14	player	1	sentence	That’s really all I have to say. 		0	0	-1	none
+15	player	1	choice	Nice to meet you. I hope we can be friends. 		1	0	-1	none
+16	player	1	choice	So write me back to me? I guess. 		0	0	-1	none
+17	player	1	choice	Write a letter back. Or not. I don’t really care. 		0	1	-1	none
+18	player	1	closing	From, [player] 		0	0	-1	none
+19	player	1	EOL			0	0	-1	narrative
+20	narrative	2	sentence	As I passed my letter over, I began to wonder if I’ll get a response... 		0	0	-1	none
+21	narrative	2	sentence	One week later... 		0	0	-1	none
+22	narrative	2	sentence	Once our teacher started handing out letters, I was surprised to see one with my name on it. 		0	0	-1	none
+23	narrative	2	EOL			0	0	-1	pal
+24	pal	1	greeting	To [player], 		0	0	-1	none
+25	pal	1	sentence	My name is Alex. 		0	0	-1	none
+26	pal	1	sentence	I don’t know how this works but I hope you get this. 		0	0	-1	none
+27	pal	1	sentence	I think that homework assignments should be taken seriously no matter how mean your teacher is. 		0	0	-1	none
+28	pal	1	choice	I’m actually pretty amazing at math. English isn’t my strong suit however. 		0	0	10	none
+29	pal	1	choice	It’s completely understandable. Not everyone can be good at math. 		0	0	11	none
+30	pal	1	choice	That’s rude to say to a stranger whom you’d rather not be writing to them. You did write the letter though so what does that say about you? 		0	0	12	none
+31	pal	1	EOP			0	0	-1	none
+32	pal	1	sentence	Other than that, I have nothing else to talk about. 		0	0	-1	none
+33	pal	1	choice	It’s very nice to meet you too. I would like to be friends as well. 		0	0	15	none
+34	pal	1	choice	You’ve gotten a response back to your letter as you wanted. So what now? 		0	0	16	none
+35	pal	1	choice	If you don’t care, then why are you even writing? 		0	0	17	none
+36	pal	1	closing	Sincerely, Alex 		0	0	-1	none
+37	pal	1	EOL			0	0	-1	narrative
+38	narrative	3	sentence	My pen pal seemed… interesting. 		0	0	-1	none
+39	narrative	3	sentence	To my surprise, I wanted to see what else they had to say. 		0	0	-1	none
+40	narrative	3	sentence	I took out another sheet of paper and started writing. 		0	0	-1	none
+41	narrative	3	sentence	To Alex... 		0	0	-1	none
+42	narrative	4	sentence	Two years later... 		0	0	-1	none
+43	narrative	4	sentence	As middle school started, the letters continued to pile. 		0	0	-1	none
+44	narrative	4	EOL			0	0	-1	pal
+45	pal	2	greeting	What’s up [player], 		0	0	-1	none
+46	pal	2	sentence	I've attached some mad libs for us to play! Fill them out and I'll give you the completed version! 		0	0	-1	none
+47	pal	2	closing	Regards, Alex 		0	0	-1	none
+48	pal	2	EOL			0	0	-1	madlibs
+49	narrative	5	sentence	Weeks pass... 		0	0	-1	none
+50	narrative	5	EOL			0	0	-1	player
+51	player	2	greeting	What’s up Alex, 		0	0	-1	none
+52	player	2	sentence	Ugh, I’m getting swamped with projects left and right. 		0	0	-1	none
+53	player	2	sentence	I’ve got an essay due tomorrow and I have to make a powerpoint for history. 		0	0	-1	none
+54	player	2	choice	Is there anything that you’re working on right now? 		1	0	-1	none
+55	player	2	choice	I’m so tired. I can’t believe we have to do this much work just to get a good grade. 		0	0	-1	none
+56	player	2	choice	At this point, I’m ready to copy/paste something from Wikipedia just to get it done. 		0	1	-1	none
+57	player	2	EOP			0	0	-1	none
+58	player	2	sentence	But I got on the basketball team recently and that’s been so cool. 		0	0	-1	none
+59	player	2	sentence	I’m just a bench warmer for now, but the coach told me that I might end up as a starter in like a month. 		0	0	-1	none
+60	player	2	sentence	Man, I can’t wait! I’ll finally have a chance to impress that cute kid in my chem class. 		0	0	-1	none
+61	player	2	sentence	Anyways I’ve got an algebra midterm next week and I’m ready to just 		0	0	-1	none
+62	player	2	choice	go to study sessions and use my notes to prepare. 		1	0	-1	none
+63	player	2	choice	pull an all-nighter and cram the night before. 		0	0	-1	none
+64	player	2	choice	cheat to get it over with, I’m pretty sure the one sitting next to me won’t mind. 		0	1	-1	none
+65	player	2	EOP			0	0	-1	none
+66	player	2	sentence	My brain’s pretty fried now, can you rec me some more songs, that band last time was pretty neat. 		0	0	-1	none
+67	player	2	closing	Later, [player] 		0	0	-1	none
+68	player	2	EOL			0	0	-1	narrative
+69	narrative	6	sentence	Some time later... 		0	0	-1	none
+70	narrative	6	EOL			0	0	-1	pal
+71	pal	3	greeting	What’s up [player], 		0	0	-1	none
+72	pal	3	sentence	It’s always nice to get a letter from you, especially when I’m busy with work. 		0	0	-1	none
+73	pal	3	sentence	I have a pretty big physics project that I have to present next week, but I’m confident I’ll do well. 		0	0	-1	none
+74	pal	3	choice	I’ve been getting ahead of my projects unlike the other students in the class. 		1	0	54	none
+75	pal	3	choice	In order to be successful, you need to put in hard work. It’s all worth it in the end. 		0	0	55	none
+76	pal	3	choice	Copying and pasting is not the right attitude to have. You’ll never learn anything that way. 		0	1	56	none
+77	pal	3	EOP			0	0	-1	none
+78	pal	3	sentence	But wow the basketball team! Kudos to you [player]. 		0	0	-1	none
+79	pal	3	sentence	Was tryouts difficult? Well maybe not, after all you’re going to be on the team in about a month. 		0	0	-1	none
+80	pal	3	sentence	That’s pretty fast considering you’re a bench warmer right now. 		0	0	-1	none
+81	pal	3	sentence	I mean hey, maybe that cute kid won’t ignore you for long. 		0	0	-1	none
+82	pal	3	EOP			0	0	-1	none
+83	pal	3	sentence	Also in regards to your midterm, 		0	0	-1	none
+84	pal	3	choice	good luck on studying, I hope you do well! 		1	0	62	none
+85	pal	3	choice	cramming the night before won’t help a lot. I suggest you start studying at least a couple days before. 		0	0	63	none
+86	pal	3	choice	Yikes. Cheaters never prosper, [player]. 		0	1	64	none
+87	pal	3	EOP			0	0	-1	none
+88	pal	3	sentence	Anyways, I’ve been doing great in most of my honors classes. 		0	0	-1	none
+89	pal	3	sentence	My teachers keep praising me and telling me that they recommend I move up a grade. 		0	0	-1	none
+90	pal	3	sentence	I’m not sure how to feel about that actually. 		0	0	-1	none
+91	pal	3	sentence	But uh oh, a fried brain?! 		0	0	-1	none
+92	pal	3	sentence	Time to recommend the best beats I have! 		0	0	-1	none
+93	pal	3	sentence	So turn this page around and you’ll find a list of songs I’d think you’ll like. 		0	0	-1	none
+94	pal	3	closing	Regards, Alex 		0	0	-1	none
+95	pal	3	EOL			0	0	-1	narrative
+96	narrative	7	sentence	A couple months later... 		0	0	-1	none
+97	narrative	7	EOL			0	0	-1	pal
+98	pal	4	greeting	Greetings, [player] 		0	0	-1	none
+99	pal	4	sentence	I've got a new set of mad libs for you! Send them back when you fill it out and I'll give you the complete one! 		0	0	-1	none
+100	pal	4	closing	Have fun, Alex 		0	0	-1	none
+101	pal	4	EOL			0	0	-1	madlibs
+102	narrative	8	sentence	Several months pass... 		0	0	-1	none
+103	narrative	8	EOL			0	0	-1	player
+104	player	3	greeting	Big news Alex, 		0	0	-1	none
+105	player	3	sentence	I was talking to Stacey from my class today. 		0	0	-1	none
+106	player	3	sentence	I mentioned you and she kinda looked at me funny. 		0	0	-1	none
+107	player	3	sentence	She said that she stopped talking to her pen pal a long time ago. 		0	0	-1	none
+108	player	3	choice	I’m glad that we still talk to each other. 		1	0	-1	none
+109	player	3	choice	Do you think that it’s weird that we still send letters? 		0	0	-1	none
+110	player	3	choice	She’s just mad at her bad luck. 		0	1	-1	none
+111	player	3	EOP			0	0	-1	none
+112	player	3	sentence	By the way, congratulations! 		0	0	-1	none
+113	player	3	sentence	I’m really glad for you winning that award, man! That’s so cool! 		0	0	-1	none
+114	player	3	choice	You’re probably going to do great later on! Any tips on how to succeed as well as you do? 		1	0	-1	none
+115	player	3	choice	I don’t think I’m confident enough to do something like that because of the pressure. 		0	0	-1	none
+116	player	3	choice	Do you think you can share the prize you won with me? 		0	1	-1	none
+117	player	3	sentence	Well, aside from school, how’s it going at home? 		0	0	-1	none
+118	player	3	sentence	Also you should get this letter when you come back from vacation, so tell me about it! 		0	0	-1	none
+119	player	3	closing	Can't wait for more, [player] 		0	0	-1	none
+120	player	3	EOL			0	0	-1	narrative
+121	narrative	9	sentence	Some time later... 		0	0	-1	none
+122	narrative	9	EOL			0	0	-1	pal
+123	pal	5	greeting	Dearest [player], 		0	0	-1	none
+124	pal	5	sentence	Yeah, one of my classmates said the same thing. 		0	0	-1	none
+125	pal	5	sentence	It’s sad that there’s not that many students writing to their pen pals anymore. 		0	0	-1	none
+126	pal	5	choice	I’m glad to have you as my pen pal, too. Your letters never stop to amaze me. 		1	0	108	none
+127	pal	5	choice	I don’t think it’s weird that we still talk. We’re good friends. Maybe they just lost touch? 		0	0	109	none
+128	pal	5	choice	Don’t be so mean to Stacey. It doesn’t sound like she was being rude to you. 		0	1	110	none
+129	pal	5	EOP			0	0	-1	none
+130	pal	5	sentence	Anyway, thanks for the congratulations! 		0	0	-1	none
+131	pal	5	sentence	It took awhile, but I put a lot of effort into this competition these last couple of months. 		0	0	-1	none
+132	pal	5	choice	I’m far from doing great. I still have a long way to go. The only tip I have is to try your best. 		1	0	114	none
+133	pal	5	choice	You should have more confidence in yourself. I believe that you can do anything you put your mind to. 		0	0	115	none
+134	pal	5	choice	Share my prize? That’s a hilarious joke, [player]. Prizes ought to be earned on your own merit. 		0	1	116	none
+135	pal	5	EOP			0	0	-1	none
+136	pal	5	sentence	Smooth segue. 		0	0	-1	none
+137	pal	5	sentence	Home hasn’t changed a single bit, besides the nagging from my parents about my grades. 		0	0	-1	none
+138	pal	5	sentence	Our vacation was so exciting, so much cool stuff that you would like happened! 		0	0	-1	none
+139	pal	5	sentence	Please look forward to a postcard that I sent while we were there. 		0	0	-1	none
+140	pal	5	closing	Tropically yours, Alex 		0	0	-1	none
+141	pal	5	EOL			0	0	-1	narrative
+142	narrative	10	sentence	We continued to send letters to each other even in high school. 		0	0	-1	none
+143	narrative	10	EOL			0	0	-1	player
+144	player	4	greeting	Summer’s here Alex! 		0	0	-1	none
+145	player	4	sentence	Do you remember on how I used to rant about finishing that one unbeatable video game a year ago? 		0	0	-1	none
+146	player	4	sentence	Well guess who finally beat the final boss! 		0	0	-1	none
+147	player	4	choice	Your strategy helped a lot especially when the boss started healing itself. 		1	0	-1	none
+148	player	4	choice	Not me since I couldn’t finish the last QTE! 		0	0	-1	none
+149	player	4	choice	I used this one invincible hack that was posted online. 		0	1	-1	none
+150	player	4	sentence	But seriously! 		0	0	-1	none
+151	player	4	sentence	I’ve never felt so stressed in my life, and I thought finals were going to rip my brain in half. 		0	0	-1	none
+152	player	4	sentence	Even the sun is planning to burn me into a crisp before the end of the day! 		0	0	-1	none
+153	player	4	EOP			0	0	-1	none
+154	player	4	sentence	Speaking of which, what are you planning to do this summer? 		0	0	-1	none
+155	player	4	choice	My family has been bugging me for the past weeks. Do you have any suggestions? 		1	0	-1	none
+156	player	4	choice	Whenever one of my friends bring it up, I always end up shrugging at them. 		0	0	-1	none
+157	player	4	choice	I’m probably going to be lazing around all day in bed, because boy I love sleep. Sleep is great. 		0	1	-1	none
+158	player	4	EOP			0	0	-1	none
+159	player	4	sentence	Anyways, what’s life like on your side? 		0	0	-1	none
+160	player	4	sentence	You skipped a bunch of grades and made it to college, but dang, what’s it like? 		0	0	-1	none
+161	player	4	choice	You doing alright? Classes aren’t too tough on you, are they? 		1	0	-1	none
+162	player	4	choice	Is it like really different from high school? 		0	0	-1	none
+163	player	4	choice	Is college full of nerds like you? 		0	1	-1	none
+164	player	4	closing	`Til next time, [player] 		0	0	-1	none
+165	player	4	EOL			0	0	-1	narrative
+166	narrative	11	sentence	A week later... 		0	0	-1	none
+167	narrative	11	EOL			0	0	-1	pal
+168	pal	6	greetings	How are you [player], 		0	0	-1	none
+169	pal	6	sentence	Yeah, I remember getting a two page report on how bad that dungeon crawler game was way back. 		0	0	-1	none
+170	pal	6	sentence	You even tore a hole at the end of the page! 		0	0	-1	none
+171	pal	6	choice	My strategy wasn’t half bad right? 		1	0	147	none
+172	pal	6	choice	Aw, better luck next time then? 		0	0	148	none
+173	pal	6	choice	Shame on you. Hacks ruin everything! 		0	1	149	none
+174	pal	6	sentence	Then again, most strategy based video games tend to add more stress than relieve it. 		0	0	-1	none
+175	pal	6	sentence	But, we should be grateful that there’s no video game about finals. 		0	0	-1	none
+176	pal	6	sentence	That would’ve been the number one horror game for almost everyone around the world. 		0	0	-1	none
+177	pal	6	sentence	Otherwise we all would prefer to be burnt to crisp than playing some game about finals. 		0	0	-1	none
+178	pal	6	EOP			0	0	-1	none
+179	pal	6	sentence	Anyway, my plans for summer? I’m not sure yet. 		0	0	-1	none
+180	pal	6	choice	I have a few suggestions for you in mind, what does your family prefer? Fun, educational, or complete relaxation? 		1	0	115	none
+181	pal	6	choice	I just can’t seem to come up with a quick response in time. I haven’t been thinking about vacation plans recently. 		0	0	156	none
+182	pal	6	choice	Sorry, I snorted there for a second. An image of a couch potato version of you came up in my mind. 		0	1	157	none
+183	pal	6	EOP			0	0	-1	none
+184	pal	6	sentence	However everything at college has been going pretty smoothly. 		0	0	-1	none
+185	pal	6	sentence	I do get the odd look from other students, probably because they’re jealous. 		0	0	-1	none
+186	pal	6	choice	I’m dealing with classes alright. Some of the professors are skeptical of me because they underestimate me, but I’m going to prove them wrong. 		1	0	159	none
+187	pal	6	choice	College and high school aren’t super different. In fact, it’s a lot easier since you can choose when you want to take classes. 		0	0	160	none
+188	pal	6	choice	Wow...rude. Are you trying to pick a fight with me through this letter, [player]? 		0	1	161	none
+189	pal	6	closing	Cordially yours, Alex 		0	0	-1	none
+190	pal	6	EOL			0	0	-1	narrative
+191	narrative	12	sentence	A couple months later... 		0	0	-1	none
+192	narrative	12	EOL			0	0	-1	pal
+193	pal	7	greeting	How's it going, [player]? 		0	0	-1	none
+194	pal	7	sentence	Are you up for some more mad libs? Fill these out and I'll get them back to you! 		0	0	-1	none
+195	pal	7	closing	Awaiting your mail, Alex 		0	0	-1	none
+196	pal	7	EOL			0	0	-1	madlibs
+197	narrative	13	sentence	Our letter exchange continued even into my college years. 		0	0	-1	none
+198	narrative	13	EOL			0	0	-1	player
+199	player	5	greeting	Long time no talk Alex, 		0	0	-1	none
+200	player	5	sentence	How’s life going so far for you? 		0	0	-1	none
+201	player	5	sentence	Well I finally listened to your advice on not taking an eight AM class. 		0	0	-1	none
+202	player	5	sentence	Barely anyone’s awake to care enough to pay attention. 		0	0	-1	none
+203	player	5	sentence	The professor just lectures the whole time and didn’t even follow the powerpoint. 		0	0	-1	none
+204	player	5	sentence	Like I swear they’re just making this stuff up as they go. 		0	0	-1	none
+205	player	5	sentence	Honestly, I 		0	0	-1	none
+206	player	5	choice	should have chosen a time easier for me. 		1	0	-1	none
+207	player	5	choice	should’ve looked up the reviews on the professor, because that professor was really boring. 		0	0	-1	none
+208	player	5	choice	was on the verge of skipping the class altogether and only coming back to take the exams. 		0	1	-1	none
+209	player	5	EOP			0	0	-1	none
+210	player	5	sentence	Besides classes, I was looking into the college basketball team again. 		0	0	-1	none
+211	player	5	sentence	I’m not sure if I’ll make it into the team like I did in middle and high school. 		0	0	-1	none
+212	player	5	choice	I’ll give it a try. Better than backing out like some runaway chicken. 		1	0	-1	none
+213	player	5	choice	Maybe I’ll consider going to a game and get an impression of what kind of team they are. 		0	0	-1	none
+214	player	5	choice	Plus I’m not as great as I was back then. I’ll probably get in everyone’s way. 		0	1	-1	none
+215	player	5	EOP			0	0	-1	none
+216	player	5	sentence	So random question that someone asked me today. 		0	0	-1	none
+217	player	5	sentence	Say if you were faced with a decision in choosing between a friend or a stranger. 		0	0	-1	none
+218	player	5	sentence	Who would you choose in the end? 		0	0	-1	none
+219	player	5	choice	Overall, I’d choose my friend. Mainly because I know them more than some stranger. 		1	0	-1	none
+220	player	5	choice	I’m just throwing out possible third answers, but why not both? 		0	0	-1	none
+221	player	5	choice	I don’t know the rando so I’m definitely picking my friend. 		0	1	-1	none
+222	player	5	closing	TTYL, [player] 		0	0	-1	none
+223	player	5	EOL			0	0	-1	narrative
+224	narrative	14	sentence	Alex sent a letter back soon after. 		0	0	-1	none
+225	narrative	14	EOL			0	0	-1	pal
+226	pal	8	greeting	It’s been awhile [player], 		0	0	-1	none
+227	pal	8	sentence	It’s about time you listened to my college advice! I’m telling you. 		0	0	-1	none
+228	pal	8	choice	An afternoon class would’ve been the best choice. If only you listened to me more. 		1	0	206	none
+229	pal	8	choice	Sometimes reviews aren’t true. And boring professors are a dime a dozen. 		0	0	207	none
+230	pal	8	choice	[player], you know better than to skip class. 		0	1	208	none
+231	pal	8	EOP			0	0	-1	none
+232	pal	8	sentence	To my surprise, without my knowledge, my professor decided to submit my thesis to a rather notable committee. 		0	0	-1	none
+233	pal	8	sentence	If they like my work, I could end up getting a grant to continue my research. 		0	0	-1	none
+234	pal	8	sentence	I can’t believe I’m saying this but…wow. 		0	0	-1	none
+235	pal	8	sentence	This is the greatest thing that’s ever happened to me. 		0	0	-1	none
+236	pal	8	EOP			0	0	-1	none
+237	pal	8	sentence	Anyways, choosing between a friend or a stranger? 		0	0	-1	none
+238	pal	8	sentence	That’s an odd question to ask. Rather vague, too. 		0	0	-1	none
+239	pal	8	choice	I think I’d agree to pick the friend; after all it’s better than picking someone you hardly know. 		1	0	219	none
+240	pal	8	choice	Both? Doesn’t that destroy the question? It makes logical sense to choose one. 		0	0	220	none
+241	pal	8	choice	Rando is such a crass word, but I can’t deny your opinion. I’d choose my friend as well. 		0	1	221	none
+242	pal	8	sentence	You sure have a lot of friends that ask random questions. 		0	0	-1	none
+243	pal	8	sentence	Must be nice. 		0	0	-1	none
+244	pal	8	closing	Until then, Alex. 		0	0	-1	none
+245	pal	8	EOL			0	0	-1	narrative
+246	narrative	15	sentence	Some number of weeks later... 		0	0	-1	none
+247	narrative	15	EOL			0	0	-1	pal
+248	pal	9	greeting	Salutations, [player] 		0	0	-1	none
+249	pal	9	sentence	I've made some more mad libs for you! You know the drill by now! 		0	0	-1	none
+250	pal	9	closing	Enjoy yourself, Alex 		0	0	-1	none
+251	pal	9	EOL			0	0	-1	madlibs
+252	narrative	16	sentence	Several months pass... 		0	0	-1	none
+253	narrative	16	EOL			0	0	-1	player
+254	player	6	greeting	Hey Alex, 		0	0	-1	none
+255	player	6	sentence	Ugh, so math is once again destroying me. 		0	0	-1	none
+256	player	6	sentence	I’ve actually been trying this time but something about matrices is just not clicking. 		0	0	-1	none
+257	player	6	choice	Do you have any math tips? 		1	0	-1	none
+258	player	6	choice	Should I just go to office hours more? 		0	0	-1	none
+259	player	6	choice	I should just buy someone’s old scantrons? 		0	1	-1	none
+260	player	6	EOP			0	0	-1	none
+261	player	6	sentence	Basketball on the other hand is doing awesome. 		0	0	-1	none
+262	player	6	sentence	We won this big game against our rivals in the area and we got on the local news! 		0	0	-1	none
+263	player	6	choice	This might not be as cool as your fancy lab workplace, but I’m proud of my team. 		1	0	-1	none
+264	player	6	choice	I’m super stoked that both of us are starting to achieve our life goals. 		0	0	-1	none
+265	player	6	choice	You should try out sports instead of your nerd stuff. 		0	1	-1	none
+266	player	6	sentence	I’m doing so well that the coach actually pulled me aside. 		0	0	-1	none
+267	player	6	sentence	He said that I could be captain next semester if I wanted, since a bunch of seniors are graduating. 		0	0	-1	none
+268	player	6	sentence	I told him that I would think about it because I wasn’t expecting it. 		0	0	-1	none
+269	player	6	choice	I wanted to ask if you think I should do it, because you have more experience with leadership. 		1	0	-1	none
+270	player	6	choice	I don’t want to disappoint the coach so I might accept it. 		0	0	-1	none
+271	player	6	choice	I’d rather take it easy so I have more time to party and chill with my buds. 		0	1	-1	none
+272	player	6	sentence	Let me know what you think I should do. 		0	0	-1	none
+273	player	6	sentence	Your advice is always interesting. 		0	0	-1	none
+274	player	6	closing	Future captain?, [player] 		0	0	-1	none
+275	player	6	EOL			0	0	-1	narrative
+276	narrative	17	sentence	I got a letter back some while later. 		0	0	-1	none
+277	narrative	17	EOL			0	0	-1	pal
+278	pal	10	greeting	Wonderful news [player]! 		0	0	-1	none
+279	pal	10	sentence	Oh, it’s nice to hear that your ball team is doing well. 		0	0	-1	none
+280	pal	10	sentence	I have also some rather exciting news! 		0	0	-1	none
+281	pal	10	sentence	I’ve been accepted to an accelerated doctoral program with a rumored waitlist that is quite long. 		0	0	-1	none
+282	pal	10	sentence	I’m apparently one of seven students that got in this quarter. 		0	0	-1	none
+283	pal	10	sentence	My advisor has given me great advice as to how I should start working already. 		0	0	-1	none
+284	pal	10	sentence	But I wouldn’t expect you to understand. 		0	0	-1	none
+285	pal	10	EOP			0	0	-1	none
+286	pal	10	sentence	The research lab that I’m interning at is very amazing. 		0	0	-1	none
+287	pal	10	sentence	I’m not allowed to share too much information as it is confidential. 		0	0	-1	none
+288	pal	10	sentence	But just know that I feel very important working here and that I do a lot of good. 		0	0	-1	none
+289	pal	10	EOP			0	0	-1	none
+290	pal	10	sentence	I really feel like I am where I’m supposed to be now. 		0	0	-1	none
+291	pal	10	sentence	I put in so much hard work and I’m finally getting what I deserve. 		0	0	-1	none
+292	pal	10	sentence	This is the happiest that I’ve ever been and I’m glad that I can share it with you. 		0	0	-1	none
+293	pal	10	closing	With warmest regards, Alex 		0	0	-1	none
+294	pal	10	EOL			0	0	-1	narrative
+295	narrative	18	sentence	Something about their letter… bothered me. 		0	0	-1	none
+296	narrative	18	sentence	Did Alex even read my letter? 		0	0	-1	none
+297	narrative	18	sentence	They sounded very happy though.. 		0	0	-1	none
+298	narrative	19	sentence	Two years later... 		0	0	-1	none
+299	narrative	19	EOL			0	0	-1	pal
+300	pal	11	greeting	Dearest [player], 		0	0	-1	none
+301	pal	11	sentence	I hope that this letter finds you well. 		0	0	-1	none
+302	pal	11	sentence	I’ve gone through a big change in my life. 		0	0	-1	none
+303	pal	11	sentence	The people that I thought were my friends have abandoned me. 		0	0	-1	none
+304	pal	11	sentence	They remark that it is because I am, in their words, selfish and callous. 		0	0	-1	none
+305	pal	11	sentence	They don’t truly understand me and who I am, as you do. 		0	0	-1	none
+306	pal	11	sentence	They were just jealous that I’m more successful in life. 		0	0	-1	none
+307	pal	11	EOP			0	0	-1	none
+308	pal	11	sentence	… To be honest, this has hurt me more than I expected. 		0	0	-1	none
+309	pal	11	sentence	I thought that I could be happy just with professional achievements alone. 		0	0	-1	none
+310	pal	11	sentence	But I have realized too late that I am just as human as everyone else that I have hurt. 		0	0	-1	none
+311	pal	11	sentence	I feel lonely. 		0	0	-1	none
+312	pal	11	EOP			0	0	-1	none
+313	pal	11	sentence	I do not have a single soul in my daily life who will acknowledge me anymore. 		0	0	-1	none
+314	pal	11	sentence	I am shunned by my peers and even vague acquaintances will not respect me. 		0	0	-1	none
+315	pal	11	sentence	If this is how they are going to treat me, I don’t need them in my life. 		0	0	-1	none
+316	pal	11	EOP			0	0	-1	none
+317	pal	11	sentence	I know that we’ve had our ups and downs, but when it comes down to it, you have been a constant in my life for the last decade. 		0	0	-1	none
+318	pal	11	sentence	You, [player], are truly my best and dearest friend. 		0	0	-1	none
+319	pal	11	sentence	You’ve been there for me longer than anyone else, and I have been there for you, I hope. 		0	0	-1	none
+320	pal	11	EOP			0	0	-1	none
+321	pal	11	sentence	… I think that I could really use a friend right now. 		0	0	-1	none
+322	pal	11	closing	Yours faithfully, Alex 		0	0	-1	none
+323	pal	11	EOL			0	0	-1	narrative
+324	narrative	20	sentence	Alex asked me for help. 		0	0	-1	none
+325	narrative	20	sentence	I thought back on all the letters we sent each other and knew what I had to send them. 		0	0	-1	none
+326	narrative	20	EOL			0	0	-1	player
+327	player	7	greeting	Alex, 		0	0	-1	none
+328	player	7	sentence	That’s … quite the development. 		0	0	-1	none
+329	player	7	EOP			0	0	-1	none
+330	player	7	choice	I'm so sorry for your loss. I really hope you feel better soon. 		1	0	-1	none
+331	player	7	choice	Wow, I can’t believe your friends just abandoned you like that. 		0	0	-1	none
+332	player	7	choice	It’s your fault for being a jerk to them. 		0	1	-1	none
+333	player	7	EOP			0	0	-1	none
+334	player	7	choice	I think everyone needs friends. I wish I could do more to help you. 		1	0	-1	none
+335	player	7	choice	I don't know if it gets better, but you just have to deal with it. 		0	0	-1	none
+336	player	7	choice	Wow, you should apologize to them for being such an asshole. 		0	1	-1	none
+337	player	7	EOP			0	0	-1	none
+338	player	7	choice	They were wrong about you. They shouldn't have hurt you like this. 		1	0	-1	none
+339	player	7	choice	That sounds really harsh of them to do that to you. 		0	0	-1	none
+340	player	7	choice	Remember that time you didn’t give me good advice? This is karma. 		0	1	-1	none
+341	player	7	EOP			0	0	-1	none
+342	player	7	choice	Don’t worry, it gets better. I'm here for you. 		1	0	-1	none
+343	player	7	choice	I think that you're strong enough to cope with this. 		0	0	-1	none
+344	player	7	choice	So, you’re not an actual unfeeling robot, huh? 		0	1	-1	none
+345	player	7	EOP			0	0	-1	none
+346	player	7	sentence	I’m sorry I don’t have more to say. 		0	0	-1	none
+347	player	7	closing	Sincerely, [player] 		0	0	-1	none
+348	player	7	EOL			0	0	-1	narrative
+349	narrative	21	sentence	I waited for a response letter but they didn’t respond within their usual month. 		0	0	-1	none
+350	narrative	21	sentence	So eventually… I stopped waiting. 		0	0	-1	none
+351	narrative	21	EOL			0	0	-1	none
+352	narrative	22	sentence	One day, twenty years later... 		0	0	-1	none
+353	narrative	22	sentence	I decided to write one last letter. 		0	0	-1	none
+354	narrative	22	EOL			0	0	-1	player
+355	player	8	greeting	Alex, 		0	0	-1	none
+356	player	8	sentence	I haven’t thought about you in a while, but I recently went to my elementary class reunion and talked to a couple who met each through the pen pal program. 		0	0	-1	none
+357	player	8	sentence	They actually reminded me of how we used to be. 		0	0	-1	none
+358	player	8	EOP			0	0	-1	none
+359	player	8	sentence	It’s been years since I got a letter from you. 		0	0	-1	none
+360	player	8	choice	I’m always here for you, you know that right?. 		1	0	-1	none
+361	player	8	choice	You can talk to me if you want. 		0	0	-1	none
+362	player	8	choice	Man, what is your problem? 		0	1	-1	none
+363	player	8	EOP			0	0	-1	none
+364	player	8	choice	Are you still reading my words? 		1	0	-1	none
+365	player	8	choice	Do you even remember me? 		0	0	-1	none
+366	player	8	choice	What’s more important than me? 		0	1	-1	none
+367	player	8	EOP			0	0	-1	none
+368	player	8	choice	I wish we could go back to that time again. 		1	0	-1	none
+369	player	8	choice	Did something happen? 		0	0	-1	none
+370	player	8	choice	I lied. I think about you often. I regret a lot. 		1	0	-1	none
+371	player	8	EOP			0	0	-1	none
+372	player	8	sentence	I miss us. 		0	0	-1	none
+373	player	8	choice	Please reply back when you can. 		1	0	-1	none
+374	player	8	choice	We can make up for the times you haven’t answered back. 		0	0	-1	none
+375	player	8	choice	You’re cruel to leave me hanging here alone. 		0	1	-1	none
+376	player	8	EOP			0	0	-1	none
+377	player	8	choice	Are my words even triggering any memories from back then? 		1	0	-1	none
+378	player	8	choice	Alex, please. 		0	0	-1	none
+379	player	8	choice	Did you even care about me? 		0	1	-1	none
+380	player	8	EOP			0	0	-1	none
+381	player	8	choice	Tell me something. 		1	0	-1	none
+382	player	8	choice	I hope you’re doing well. 		1	0	-1	none
+383	player	8	choice	I hate you. I hate that you made me care. 		0	1	-1	none
+384	player	8	EOP			0	0	-1	none
+385	player	8	sentence	Because I’m 		0	0	-1	none
+386	player	8	choice	your friend. 		1	0	-1	none
+387	player	8	choice	your pen pal. 		0	0	-1	none
+388	player	8	choice	a nobody to you. 		0	1	-1	none
+389	player	8	EOP			0	0	-1	none
+390	player	8	closing	Sincerely, [player] 		0	0	-1	none
+391	player	8	EOL			0	0	-1	narrative
+392	narrative	23	sentence	I never received a response. 		0	0	-1	none
+393	narrative	23	sentence	... 		0	0	-1	none
+394	narrative	23	EOL			0	0	-1	end
