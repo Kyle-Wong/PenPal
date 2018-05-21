@@ -18,10 +18,11 @@ public class CSVParser : MonoBehaviour {
 		}	
 	}
 	private void ReadCSV() {
-		StreamReader file = new System.IO.StreamReader("Assets/Resources/Narrative/script.tsv");	
+		TextAsset f = Resources.Load("script") as TextAsset;
+		StringReader file = new StringReader(f.text);
 		string buf;
 		file.ReadLine(); //eat the header 
-		for (int i = 2; (buf= file.ReadLine()) != null; ++i) {
+		for (int i = 2; (buf = file.ReadLine()) != null; ++i) {
 			string[] entry = buf.Trim().Split('\t');
 			Debug.Log("Loading queues at tsv line " + i.ToString());
 			CreateLetterEvent(entry, i);
@@ -29,9 +30,10 @@ public class CSVParser : MonoBehaviour {
 		//maybe run a unit test on sizes of queue vs. sizes expected lol
 		Debug.Log("Loaded all queues.");
 		//Now, we'll load the madlibs...
-		file = new System.IO.StreamReader("Assets/Resources/Narrative/madlibs.tsv");	
+		TextAsset mlFile = Resources.Load("madlibs") as TextAsset;
+		file = new StringReader(mlFile.text);	
 		file.ReadLine(); //eat the header 
-		for (int i = 2; (buf= file.ReadLine()) != null; ++i) {
+		for (int i = 2; (buf = file.ReadLine()) != null; ++i) {
 			string[] entry = buf.Trim().Split('\t');
 			Debug.Log("Loading madlibs at tsv line " + i.ToString());
 			CreateMadlibsEvent(entry, i);
